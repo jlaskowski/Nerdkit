@@ -1,0 +1,27 @@
+var evnt__handler_8h =
+[
+    [ "_bsd_accept_return_t", "d7/db8/struct__bsd__accept__return__t.html", "d7/db8/struct__bsd__accept__return__t" ],
+    [ "_bsd_read_return_t", "db/dce/struct__bsd__read__return__t.html", "db/dce/struct__bsd__read__return__t" ],
+    [ "_bsd_select_return_t", "d4/d92/struct__bsd__select__return__t.html", "d4/d92/struct__bsd__select__return__t" ],
+    [ "_bsd_getsockopt_return_t", "df/d41/struct__bsd__getsockopt__return__t.html", "df/d41/struct__bsd__getsockopt__return__t" ],
+    [ "_bsd_gethostbyname_return_t", "da/dc7/struct__bsd__gethostbyname__return__t.html", "da/dc7/struct__bsd__gethostbyname__return__t" ],
+    [ "M_BSD_RESP_PARAMS_OFFSET", "dd/dcf/evnt__handler_8h.html#a623c11a13f444556323465a0915830c5", null ],
+    [ "SOCKET_STATUS_ACTIVE", "dd/dcf/evnt__handler_8h.html#ac28e2d53c7766462e24949658efbd2ac", null ],
+    [ "SOCKET_STATUS_INACTIVE", "dd/dcf/evnt__handler_8h.html#a790c689c3fdb69b9a279d5e60fd37a6a", null ],
+    [ "SOCKET_STATUS_INIT_VAL", "dd/dcf/evnt__handler_8h.html#a54565f404367cb5aae60f4cd37485222", null ],
+    [ "M_IS_VALID_SD", "dd/dcf/evnt__handler_8h.html#af8520cfd18f5bf205ed52199affbad8d", null ],
+    [ "M_IS_VALID_STATUS", "dd/dcf/evnt__handler_8h.html#a29c90cf3a0809f3d230ab3e0d2bed65c", null ],
+    [ "BSD_RECV_FROM_FROMLEN_OFFSET", "dd/dcf/evnt__handler_8h.html#abf0e39cc9a396c3a71f1ec2cd83b61f1", null ],
+    [ "BSD_RECV_FROM_FROM_OFFSET", "dd/dcf/evnt__handler_8h.html#ab04e0c7f5dce808ae46b10cd8ce506b3", null ],
+    [ "tBsdReturnParams", "dd/dcf/evnt__handler_8h.html#a83b40157b0ba8f5b34c9608dad7be58a", null ],
+    [ "tBsdReadReturnParams", "dd/dcf/evnt__handler_8h.html#ac3633687922f9565399f057313426420", null ],
+    [ "tBsdSelectRecvParams", "dd/dcf/evnt__handler_8h.html#addbfdf4630eba6c26a6b53f77f20be15", null ],
+    [ "tBsdGetSockOptReturnParams", "dd/dcf/evnt__handler_8h.html#ac06e16b89ddcdc9a041da014e883d194", null ],
+    [ "tBsdGethostbynameParams", "dd/dcf/evnt__handler_8h.html#af25ba5d1f2170f6a8614b94d55d20bc2", null ],
+    [ "hci_event_handler", "dd/dcf/evnt__handler_8h.html#a68936c0cb0f46969d1fdf66adaaa85fc", null ],
+    [ "hci_unsol_event_handler", "dd/dcf/evnt__handler_8h.html#aefc939cbd6e30a6c08452c0ba2249bc6", null ],
+    [ "hci_unsolicited_event_handler", "dd/dcf/evnt__handler_8h.html#a2b414955bf0cfa42d82550bd9630fa26", null ],
+    [ "set_socket_active_status", "dd/dcf/evnt__handler_8h.html#acdd7f802b0576589862b1ac7496c7797", null ],
+    [ "get_socket_active_status", "dd/dcf/evnt__handler_8h.html#a4aba706f35b2b5196f6d0129ccdf586a", null ],
+    [ "socket_active_status", "dd/dcf/evnt__handler_8h.html#a34d2151e81a3cd485e0b6b3f4f8fc353", null ]
+];

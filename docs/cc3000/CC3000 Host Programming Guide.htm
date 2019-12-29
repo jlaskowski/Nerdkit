@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CC3000 Host Programming Guide - Texas Instruments Embedded Processors Wiki</title>
+
+<meta name="generator" content="MediaWiki 1.16.0">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/extensions/BreadCrumbs/BreadCrumbs.css">
+<link rel="shortcut icon" href="http://processors.wiki.ti.com/images/ti32.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://processors.wiki.ti.com/opensearch_desc.php" title="Texas Instruments Embedded Processors Wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Programming_Guide&action=creativecommons" rel="meta">
+<link rel="copyright" href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="Texas Instruments Embedded Processors Wiki Atom feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="alternate" type="application/rss+xml" title="Texas Instruments Embedded Processors Wiki RSS feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=rss">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/vector/main-ltr.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/shared.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/commonPrint.css?270" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Common.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Print.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Vector.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=-&action=raw&maxage=18000&gen=css">
+<script type="text/javascript" async="" src="./CC3000 Host Programming Guide_files/ga.js"></script><script>
+var skin="vector",
+stylepath="/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://processors.wiki.ti.com",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="CC3000_Host_Programming_Guide",
+wgTitle="CC3000 Host Programming Guide",
+wgAction="view",
+wgArticleId=13065,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=151021,
+wgVersion="1.16.0",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Texas Instruments Embedded Processors Wiki", "5": "Texas Instruments Embedded Processors Wiki talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "20": "Staging", "21": "Staging talk", "22": "C6000 EABI", "23": "C6000 EABI talk", "102": "Property", "103": "Property talk", "104": "Type", "105": "Type talk", "106": "Form", "107": "Form talk", "108": "Concept", "109": "Concept talk", "170": "Filter", "171": "Filter talk", "274": "Widget", "275": "Widget talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "texas_instruments_embedded_processors_wiki": 4, "texas_instruments_embedded_processors_wiki_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "staging": 20, "staging_talk": 21, "c6000_eabi": 22, "c6000_eabi_talk": 23, "property": 102, "property_talk": 103, "type": 104, "type_talk": 105, "form": 106, "form_talk": 107, "concept": 108, "concept_talk": 109, "filter": 170, "filter_talk": 171, "widget": 274, "widget_talk": 275, "image": 6, "image_talk": 7},
+wgSiteName="Texas Instruments Embedded Processors Wiki",
+wgCategories=["Wi-Fi", "CC3000", "Wireless Connectivity"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgRestrictionRead=[],
+wgFCKEditorDir="extensions/FCKeditor/fckeditor/",
+wgFCKEditorExtDir="extensions/FCKeditor",
+wgFCKEditorToolbarSet="Wiki",
+wgFCKEditorHeight="0",
+sfgAutocompleteOnAllChars=false,
+sfgScriptPath="/extensions/SemanticForms",
+sfgAutocompleteValues=[],
+sfgShowOnSelect=[],
+sfgFieldProperties=[],
+sfgDependentFields=[],
+sfgFormErrorsHeader="There were errors with your form input; see below.",
+sfgBlankErrorStr="cannot be blank",
+sfgBadURLErrorStr="must have the correct URL format, starting with \"http\"",
+sfgBadEmailErrorStr="must have a valid email address format",
+sfgBadNumberErrorStr="must be a valid number",
+sfgBadDateErrorStr="must be a valid date",
+sfgAnonEditWarning="Warning: You are not logged in. Your IP address will be recorded in this page\'s edit history.",
+sfgSaveAndContinueSummary="Saved using \"Save and continue\" button in form";
+</script><script src="./CC3000 Host Programming Guide_files/wikibits.js"></script>
+<script src="./CC3000 Host Programming Guide_files/jquery.min.js"></script>
+<script>var ltDebugMessages = false;</script>
+<script>
+var wgLTEMessages = {"livetranslate-button-translate":"Translate","livetranslate-button-translating":"Translating...","livetranslate-dictionary-error":"Could not obtain the live translate dictionary. No words will be treated as special during the translation process."};
+</script>
+<script>var ltMsAppId = "ECE119B5F43AE1DC3FCA6A86CB13B19F8BFF7E33";</script>
+<script src="./CC3000 Host Programming Guide_files/ajax.js"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.htc")}</style><![endif]-->
+<script src="./CC3000 Host Programming Guide_files/index.php"></script><link rel="stylesheet" type="text/css" href="./CC3000 Host Programming Guide_files/index(1).php">
+
+<script src="./CC3000 Host Programming Guide_files/ext.livetranslate.js"></script><script src="./CC3000 Host Programming Guide_files/ext.lt.ms.js"></script>		<link rel="alternate" type="application/rdf+xml" title="CC3000 Host Programming Guide" href="http://processors.wiki.ti.com/index.php?title=Special:ExportRDF/CC3000_Host_Programming_Guide&xmlmime=rdf">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-CC3000_Host_Programming_Guide skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">CC3000 Host Programming Guide</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<h3 id="siteSub">From Texas Instruments Embedded Processors Wiki</h3>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#mw-head">navigation</a>,
+					<a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="livetranslatediv" style="display:inline; float:right" class="notranslate" sourcelang="en">Translate this page to&nbsp;<select id="livetranslatelang"><option value="cs">cs - Česky</option>
+<option value="de">de - Deutsch</option>
+<option value="es">es - Español</option>
+<option value="fi">fi - Suomi</option>
+<option value="fr">fr - Français</option>
+<option value="hu">hu - Magyar</option>
+<option value="it">it - Italiano</option>
+<option value="ja">ja - 日本語</option>
+<option value="ko">ko - 한국어</option>
+<option value="pl">pl - Polski</option>
+<option value="pt">pt - Português</option>
+<option value="ru">ru - Русский</option>
+<option value="sv">sv - Svenska</option>
+<option value="vi">vi - Tiếng Việt</option>
+<option value="zh-cn">zh-CN - ‪中文(中国大陆)‬</option></select>&nbsp;<button id="livetranslatebutton">Translate</button>&nbsp;<button id="ltrevertbutton" style="display:none">Show original</button></div><div id="BreadCrumbsTrail"><a href="./CC3000 Host Programming Guide_files/CC3000 Host Programming Guide.htm" title="CC3000 Host Programming Guide">CC3000 Host Programming Guide</a></div><div class="hf-nsheader"><p><script language="Javascript">
+var tiContentGroup;
+tiContentGroup = "/DSP/wiki/Ext";
+var tiPageName;
+tiPageName = 'CC3000_Host_Programming_Guide';
+</script>
+</p>
+<div style="float: right; padding: 0px 5px 5px 0px">
+<table style="border-collapse: separate; border-spacing: 0; border-width: 2px; border-style: hidden; border-color: gray; background-color: rgb(255, 255, 250);">
+<tbody><tr>
+<td> <!-- Google CSE Search Box Begins  -->
+<p></p><form action="http://processors.wiki.ti.com/index.php" id="searchbox_012993352299989377144:kjaa1vfng0a"><input type="hidden" name="title" value="GoogleSearch"><input type="hidden" name="cx" value="012993352299989377144:kjaa1vfng0a"><input type="hidden" name="cof" value="FORID:11"><input type="text" name="q" size="25" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;"><input type="submit" name="sa" value="Search"><input name="siteurl" type="hidden" value="processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide"><input name="ref" type="hidden" value="www.google.com/"><input name="ss" type="hidden" value=""></form><script type="text/javascript" src="./CC3000 Host Programming Guide_files/brand"></script>
+<!-- Google CSE Search Box Ends --><!-- Google Search Result Snippet Begins -->
+<p></p>
+<div id="results_012993352299989377144:kjaa1vfng0a"></div><script type="text/javascript">var googleSearchIframeName = "results_012993352299989377144:kjaa1vfng0a";var googleSearchFormName = "searchbox_012993352299989377144:kjaa1vfng0a";var googleSearchFrameWidth = 600;var googleSearchFrameborder = 0;var googleSearchDomain = "www.google.com";var googleSearchPath = "/cse";</script><script type="text/javascript" src="./CC3000 Host Programming Guide_files/show_afs_search.js"></script>
+<p><!-- Google Search Result Snippet Ends -->
+</p>
+</td></tr></tbody></table>
+</div>
+</div><div class="hf-header"></div><p><a href="http://processors.wiki.ti.com/index.php/CC3000" title="CC3000"> Return to CC3000 Main page</a>
+<br><br>
+</p><p>This wiki addresses the software package that is provided by TI for an external microcontroller that acts as a host processor. The software package implements the CC3000 host driver and a demonstration application. 
+</p><p><br>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a id="togglelink" class="internal" href="javascript:toggleToc()">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Assumptions"><span class="tocnumber">1</span> <span class="toctext">Assumptions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_Host_Driver_Architecture_Overview"><span class="tocnumber">2</span> <span class="toctext">CC3000 Host Driver Architecture Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Overview"><span class="tocnumber">2.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#System_Block_Diagram"><span class="tocnumber">2.2</span> <span class="toctext">System Block Diagram</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Description"><span class="tocnumber">2.3</span> <span class="toctext">Description</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#By_Structure"><span class="tocnumber">3</span> <span class="toctext">By Structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#API_Function_Calls"><span class="tocnumber">3.1</span> <span class="toctext">API Function Calls</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Events"><span class="tocnumber">3.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Command_Response_Events"><span class="tocnumber">3.2.1</span> <span class="toctext">Command Response Events</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Unsolicited_Events"><span class="tocnumber">3.2.2</span> <span class="toctext">Unsolicited Events</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Special_Events"><span class="tocnumber">3.2.3</span> <span class="toctext">Special Events</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Callbacks"><span class="tocnumber">3.2.4</span> <span class="toctext">Callbacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Example_Breakthrough_of_the_API_Function_Call"><span class="tocnumber">3.3</span> <span class="toctext">Example Breakthrough of the API Function Call</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#API_Call_Example"><span class="tocnumber">3.3.1</span> <span class="toctext">API Call Example</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#HCI_Layer_Example"><span class="tocnumber">3.3.2</span> <span class="toctext">HCI Layer Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_Serial_Port_Interface"><span class="tocnumber">4</span> <span class="toctext">CC3000 Serial Port Interface</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Overview_2"><span class="tocnumber">4.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Protocol_Description"><span class="tocnumber">4.2</span> <span class="toctext">Protocol Description</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_NVMEM_API.E2.80.99s"><span class="tocnumber">5</span> <span class="toctext">CC3000 NVMEM API’s</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#EEPROM_structure_overview"><span class="tocnumber">5.1</span> <span class="toctext">EEPROM structure overview</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#EEPROM_Update"><span class="tocnumber">5.2</span> <span class="toctext">EEPROM Update</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#MAC_Address_update_process"><span class="tocnumber">5.2.1</span> <span class="toctext">MAC Address update process</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Patches_Update_Process_.E2.80.93_Download_of_Patches_from_Host"><span class="tocnumber">5.2.2</span> <span class="toctext">Patches Update Process – Download of Patches from Host</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_WLAN_API"><span class="tocnumber">6</span> <span class="toctext">CC3000 WLAN API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Creating_Profiles_and_Policies"><span class="tocnumber">6.1</span> <span class="toctext">Creating Profiles and Policies</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Creating_WLAN_Connection"><span class="tocnumber">6.2</span> <span class="toctext">Creating WLAN Connection</span></a>
+<ul>
+<li class="toclevel-3 tocsection-27"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#First_time_configuration"><span class="tocnumber">6.2.1</span> <span class="toctext">First time configuration</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Creating_WLAN_Connection_explicitly"><span class="tocnumber">6.2.2</span> <span class="toctext">Creating WLAN Connection explicitly</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Using_WLAN_policy_and_profiles"><span class="tocnumber">6.2.3</span> <span class="toctext">Using WLAN policy and profiles</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Performing_WLAN_scan"><span class="tocnumber">6.3</span> <span class="toctext">Performing WLAN scan</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_Socket_API"><span class="tocnumber">7</span> <span class="toctext">CC3000 Socket API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Data_Transmission_and_reception"><span class="tocnumber">7.1</span> <span class="toctext">Data Transmission and reception</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Data_Transmission_Overview"><span class="tocnumber">7.1.1</span> <span class="toctext">Data Transmission Overview</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Data_Reception_Overview"><span class="tocnumber">7.1.2</span> <span class="toctext">Data Reception Overview</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#TCP_Socket_API"><span class="tocnumber">7.2</span> <span class="toctext">TCP Socket API</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Client_TCP_socket_connection"><span class="tocnumber">7.2.1</span> <span class="toctext">Client TCP socket connection</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Server_TCP_sockets_connection"><span class="tocnumber">7.2.2</span> <span class="toctext">Server TCP sockets connection</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Sending_and_Receiving_data_over_TCP_socket"><span class="tocnumber">7.2.3</span> <span class="toctext">Sending and Receiving data over TCP socket</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-39"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#UDP_Socket_API"><span class="tocnumber">7.3</span> <span class="toctext">UDP Socket API</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Client_UDP_socket_connection"><span class="tocnumber">7.3.1</span> <span class="toctext">Client UDP socket connection</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Server_UDP_socket_connection"><span class="tocnumber">7.3.2</span> <span class="toctext">Server UDP socket connection</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-42"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#TX_complete_indication"><span class="tocnumber">7.4</span> <span class="toctext">TX complete indication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_NETWORK_CONFIGURATION_API"><span class="tocnumber">8</span> <span class="toctext">CC3000 NETWORK CONFIGURATION API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-44"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Configuring_MAC_and_IP_Address"><span class="tocnumber">8.1</span> <span class="toctext">Configuring MAC and IP Address</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Reading_network_status"><span class="tocnumber">8.2</span> <span class="toctext">Reading network status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-46"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Appendix"><span class="tocnumber">9</span> <span class="toctext">Appendix</span></a>
+<ul>
+<li class="toclevel-2 tocsection-47"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_Build_Options"><span class="tocnumber">9.1</span> <span class="toctext">CC3000 Build Options</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Remote_Debug_Capabilities"><span class="tocnumber">9.2</span> <span class="toctext">Remote Debug Capabilities</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Memory_consumption.C2.A0"><span class="tocnumber">9.3</span> <span class="toctext">Memory consumption&nbsp;</span></a>
+<ul>
+<li class="toclevel-3 tocsection-50"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Flash_consumption"><span class="tocnumber">9.3.1</span> <span class="toctext">Flash consumption</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#RAM_consumption"><span class="tocnumber">9.3.2</span> <span class="toctext">RAM consumption</span></a>
+<ul>
+<li class="toclevel-4 tocsection-52"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Stack"><span class="tocnumber">9.3.2.1</span> <span class="toctext">Stack</span></a></li>
+<li class="toclevel-4 tocsection-53"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Global_variables"><span class="tocnumber">9.3.2.2</span> <span class="toctext">Global variables</span></a></li>
+<li class="toclevel-4 tocsection-54"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#TX_and_RX_buffers"><span class="tocnumber">9.3.2.3</span> <span class="toctext">TX and RX buffers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-55"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Tiny_Driver_Compilation_Option"><span class="tocnumber">9.3.3</span> <span class="toctext">Tiny Driver Compilation Option</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-56"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Site_Map"><span class="tocnumber">10</span> <span class="toctext">Site Map</span></a></li>
+</ul>
+</td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<h2> <span class="mw-headline" id="Assumptions"> Assumptions  </span></h2>
+<p>Familiarity with: 
+</p>
+<ul><li>Standard SPI operation 
+</li><li>Quick Start application
+</li></ul>
+<h2> <span class="mw-headline" id="CC3000_Host_Driver_Architecture_Overview"> CC3000 Host Driver Architecture Overview  </span></h2>
+<h3> <span class="mw-headline" id="Overview"> Overview  </span></h3>
+<p>The CC3000 device is designed to be a WLAN peripheral, which is simple to integrate and easy to use. For this purpose, the CC3000 integrates a fully-featured 802.11 protocol stack, personal security supplicant for 802.11, and an internet protocol (IP) networking stack. The host driver is designed to enable access to the CC3000 hardware with minimal burden to the host platform. 
+</p><p>The key properties of the CC3000's host driver are: 
+</p>
+<ul><li>Modular: allows easy configuration and adjustment of the host driver content to meet required functionality and capabilities while minimizing its footprint 
+</li><li>Readable: the source code is well documented. 
+</li><li>Portable: minimal platform and operating system (OS) dependencies
+</li></ul>
+<h3> <span class="mw-headline" id="System_Block_Diagram"> System Block Diagram  </span></h3>
+The figure below shows the CC3000 host driver modules <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:690px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_driver_diagram.PNG" class="image"><img alt="Cc3000 driver diagram.PNG" src="./CC3000 Host Programming Guide_files/Cc3000_driver_diagram.PNG" width="688" height="384" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> 
+<h3> <span class="mw-headline" id="Description"> Description  </span></h3>
+<p>The system has two demarcation lines:<br>• CC3000 user application programming interfaces (APIs)<br>• Transport layer APIs<br>
+</p><p>This document focuses on the user APIs and architecture and the serial peripheral interface (SPI). The CC3000 user APIs define interfaces (I/Fs) exposed to the end user that allow interaction with the CC3000 device. Interaction with the device occurs over an SPI transport layer according to the device-specific APIs. APIs reside on top of an encapsulation layer called the host controlled interface (HCI). APIs are defined in a manner that is agnostic to the SPI layer. 
+</p><p>The user APIs are organized into four silos to reflect the four different entities that correspond within the device (see figure below). These are: 
+</p>
+<ul><li>WLAN APIs, which interact with the underlying entity that is responsible for 802.11 protocol implementation
+</li></ul>
+<ul><li>Network stacks APIs, which interact with the embedded network stack. These APIs comply with the well-known Berkeley socket APIs and are easy to use. 
+</li><li>Embedded network application APIs, which interact with the embedded networking application delivered as a complementary part of the on-chip content. These include basic networking applications that the user can leverage (for example, ping utility and DNS). 
+</li><li>Nonvolatile memory (NVMEM) APIs, which configure the external CC3000 device EEPROM, where most of the configuration is store.
+</li></ul>
+<br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:461px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_host_api.PNG" class="image"><img alt="Cc3000 host api.PNG" src="./CC3000 Host Programming Guide_files/Cc3000_host_api.PNG" width="459" height="302" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div><br>
+<p>Each API group has associated commands and events. Events include two main types: unsolicited events and events triggered by the device. 
+</p>
+<ul><li>Unsolicited events are not triggered by the CC3000 host driver and are initiated on the CC3000 device (for example, one unsolicited event, Init Complete, comes after the WLAN_EN line is asserted and the CC3000 finishes its initialization process). 
+</li><li>Triggered events are those incoming to the CC3000 host driver as a result of a command sent to the device.
+</li></ul>
+<h2> <span class="mw-headline" id="By_Structure"> By Structure  </span></h2>
+<h3> <span class="mw-headline" id="API_Function_Calls"> API Function Calls  </span></h3>
+<p>API function calls are commands issued by the user from the application layer that trigger an activity of the device. The resulting behavior is function-specific and determined by the definition of the function and the context to which it is applied. The description of each API function reflects its expected behavior and use context. Unless otherwise specified, all functions have a return code that is delivered from the device using a command completion sequence specified in the events section. 
+</p>
+<table style="height: 123px" cellspacing="1" cellpadding="1" border="1">
+
+<tbody><tr>
+<td> <b>*Queuing of commands or events is not available as part of the CC3000 host driver. As a result, only one outstanding command is processed at a time.<br>*ALL API function calls are blocking unless stated otherwise; thus, the user context is blocked until the API call executes. This does not imply, for example, that the function call does not return until the whole process triggered by the API command is finished. The function call returns as soon as the command is passed over transport to the device and the command response event is received (as described in the <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Command_Response_Events" class="external text" rel="nofollow" target="_blank">Command Response Events</a> section).</b>
+</td></tr></tbody></table>
+<h3> <span class="mw-headline" id="Events"> Events  </span></h3>
+<p>An event is a device-triggered behavior that results in an interruption of the host processor. Two types of events are generated by the CC3000 device: 
+</p>
+<ul><li>Command response events 
+</li><li>Unsolicited events
+</li></ul>
+<h4> <span class="mw-headline" id="Command_Response_Events"> Command Response Events  </span></h4>
+<p>Command response events are generated as a result of a command issued to the device when the command has reached the point that either the command is completed or the long-term process is triggered. It is used by the device to return control to the caller with the appropriate result. Command response events carry an opcode that corresponds to the opcode of the command (API) that generates them and a status that reflects the return code of the calling function. 
+</p>
+<h4> <span class="mw-headline" id="Unsolicited_Events"> Unsolicited Events  </span></h4>
+The system provides unsolicited events triggered by the device. These events are generated asynchronously to indicate an occurrence of a system event. The following figure shows the basic event sequences: <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:733px;"><a href="http://processors.wiki.ti.com/index.php/File:Unsolicited_Events_Sequence.jpg" class="image"><img alt="Unsolicited Events Sequence.jpg" src="./CC3000 Host Programming Guide_files/Unsolicited_Events_Sequence.jpg" width="731" height="150" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> 
+<p>Unsolicited events that are generated by the device have their own unique opcode. 
+</p><p>A callback function that corresponds to the event is invoked and carries on event handling thereafter, if the callback is registered by the user application. 
+</p><p>All unsolicited events can be masked using a special command that controls the event mask. Command completion events cannot be masked (because they deliver the result code and thus are required to maintain API integrity) and are not passed to the user application. 
+</p><p>Because there is no queuing mechanism within the CC3000 host drive, the hci_unsolicited_event_handler function must be called by the user periodically each 500 ms. The function determines if unsolicited event handling is required and, if so, triggers the appropriate callback function. The periodic call to the function can be executed either in the dedicated context of the timer interrupt, for example, or within the main loop of the user application, as occurs in the Basic WiFi Applications.<br>
+</p><p><br>
+</p><p><u><b>Unsolicited Events list</b></u>
+</p><p>The following lists all of the asynchronous events that can be generated by CC3000 device: 
+</p>
+<ul><li>HCI_EVNT_WLAN_ASYNC_SIMPLE_CONFIG_DONE – Notification that the first-time configuration process is complete 
+</li><li>HCI_EVNT_WLAN_KEEPALIVE – Periodic keep-alive event between the CC3000 and the host microcontroller unit (MCU) 
+</li><li>HCI_EVNT_WLAN_UNSOL_CONNECT – WLAN-connected event 
+</li><li>HCI_EVNT_WLAN_UNSOL_DISCONNECT – Notification that CC3000 device is disconnected from the access point (AP) 
+</li><li>HCI_EVNT_WLAN_UNSOL_DHCP – Notification of a Dynamic Host Configuration Protocol (DHCP) state change 
+</li><li>HCI_EVNT_WLAN_UNSOL_INIT – Notification that the CC3000 device finished the initialization process 
+</li><li>HCI_EVNT_WLAN_ASYNC_PING_REPORT – Notification of ping results
+</li></ul>
+<h4> <span class="mw-headline" id="Special_Events"> Special Events  </span></h4>
+<p>There is one exceptional unsolicited event for which a callback is not possible: The purpose of the unsolicited Number Of Completed Packets event is to notify the host driver that data packet transmission has occurred. For more information, see the section on <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Data_Transmission_and_reception" class="external text" rel="nofollow" target="_blank">Data Transmission and Reception</a>. 
+</p>
+<h4> <span class="mw-headline" id="Callbacks"> Callbacks  </span></h4>
+<p>Callbacks are user-provided functions that carry a predefined template and deliver unsolicited events to a user-controlled implementation or to trigger a system behavior of the user application. The number of callbacks used by the CC3000 driver is minimized to avoid any processing overhead incurred by the callback mechanism. The callbacks inform on asynchronous events that occur during operation. It is impossible to call an API function from the callback context. The callbacks supported by the CC3000 driver are: 
+</p>
+<ul><li>Init callback
+</li></ul>
+<dl><dd><dl><dd>Allows processing on initialization completion and enables an asynchronous initialization procedure for the device. In systems with other activities to commence in parallel with CC3000 system initialization, init callback provides notification that the device is ready to connect and resume WLAN networking-related activity.
+</dd></dl>
+</dd></dl>
+<ul><li>API event callback
+</li></ul>
+<dl><dd><dl><dd>Delivers system-triggered events to the user for user-specific handling.
+</dd></dl>
+</dd></dl>
+<ul><li>Patch callback
+</li></ul>
+<dl><dd><dl><dd>Provides the CC3000 device with an initialization script if it is stored in the host file system by the user application. The user can provide a callback function for the event handler of the patch request event that comes from the CC3000 device.
+</dd></dl>
+</dd></dl>
+<p><br>
+</p>
+<h3> <span class="mw-headline" id="Example_Breakthrough_of_the_API_Function_Call"> Example Breakthrough of the API Function Call  </span></h3>
+<p><b>Overview</b>
+</p><p>This section provides a brief guided code overview, including a discussion of function calls within an example API function call, starting from the highest layer (API call) to the lowest layer (SPI interaction).
+</p>
+<h4> <span class="mw-headline" id="API_Call_Example"> API Call Example  </span></h4>
+<p>For example, consider an implementation of a socket API: 
+</p>
+When a socket function call is executed, the API function socket encapsulates all of the required API-specific parameters in the packet to be sent over the SPI and passes those parameters to the host-controller interface (HCI) layer. The HCI layer adds HCI-specific parameters to the packet and passes the packet to the SPI transport layer. An SPI transport layer sends the packet over the SPI based on the SPI protocol. The following figure shows the resulting packet <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:912px;"><a href="http://processors.wiki.ti.com/index.php/File:API_packet_structure.jpg" class="image"><img alt="API packet structure.jpg" src="./CC3000 Host Programming Guide_files/API_packet_structure.jpg" width="910" height="122" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> <br>
+<p>From the code perspective, the following code is within the API call: 
+</p>
+<pre>socket(int domain, int type, int protocol)
+{
+    unsigned short int arg_len;
+    int ret;
+    unsigned char *ptr;
+    bsd_socket_args_t *args;
+
+    arg_len = 0;
+    ret = EFAIL;
+    ptr = tSLInformation.pucTxCommandBuffer;
+    args = (bsd_socket_args_t *)(ptr + HEADERS_SIZE_CMD);
+ 
+    //
+    // Fill in HCI packet structure
+    //
+    arg_len = sizeof(bsd_socket_args_t);
+
+    args-&gt;domaint = domain;
+    args-&gt;protocol = protocol;
+    args-&gt;type = type;
+
+    //
+    // Initiate a HCI command
+    //
+	hci_command_send(HCI_CMND_SOCKET, ptr, arg_len);
+
+    //
+    // Since we are in blocking state - wait for event complete
+    //
+    SimpleLinkWaitEvent(HCI_CMND_SOCKET, &amp;ret);
+      
+    //
+    // Process the event 
+    //
+    errno = ret;
+    
+    set_socket_active_status(ret, SOCKET_STATUS_ACTIVE);
+    
+    return(ret);
+}
+</pre>
+<p>You can see that socket parameters, such as socket type and socket domain are inserted into the buffer at the offset: 
+</p>
+<pre>args = (bsd_socket_args_t *)(ptr + HEADERS_SIZE_CMD);
+args-&gt;domaint = domain;
+</pre>
+<p>As soon as preparation is complete, the packet is passed to the HCI layer, which updates the HCI layer header of the packet: 
+</p>
+<pre>hci_command_send(HCI_CMND_SOCKET, ptr, arg_len);
+</pre>
+<p>The function returns only after the Command Complete event returns from the CC3000 device: 
+</p>
+<pre>SimpleLinkWaitEvent(HCI_CMND_SOCKET, &amp;ret);
+</pre>
+<p>Note the use of the sizeof operator: 
+</p>
+<pre>arg_len = sizeof(bsd_socket_args_t);
+</pre>
+<p>It is assumed that the arguments bsd_socket_args_t are of packed type and int is defined as 4 bytes. While porting the code to a different MCU, you must stay within these assumptions, or replace each int variable with an explicit long type. 
+</p>
+<h4> <span class="mw-headline" id="HCI_Layer_Example"> HCI Layer Example  </span></h4>
+<p>The HCI layer encapsulates a packet received from the API with the opcode total length and submits it for transmission to the SPI transport layer as follows. 
+</p>
+<pre>unsigned short 
+hci_command_send(unsigned short usOpcode, unsigned char *pucBuff,
+                     unsigned char ucArgsLength)
+{ 
+    hci_cmnd_hdr_t *hci_cmnd_hdr_ptr;
+ 
+    hci_cmnd_hdr_ptr = (hci_cmnd_hdr_t *)(pucBuff + SPI_HEADER_SIZE);
+
+    hci_cmnd_hdr_ptr-&gt;ucType = HCI_TYPE_CMND;
+    hci_cmnd_hdr_ptr-&gt;usOpcode = usOpcode;
+    hci_cmnd_hdr_ptr-&gt;ucLength = ucArgsLength;
+
+    //
+    // Update the opcode of the event we will be waiting for
+    //
+    SpiWrite(pucBuff, ucArgsLength + sizeof(hci_cmnd_hdr_t));
+
+
+    return(0);
+} </pre>
+<p>The function receives as an argument an opcode of the command to be sent, a pointer to the buffer, and the length of arguments as part of the buffer. First, space for the SPI header is made at the beginning of the buffer, and then the required fields in the buffer are filled. Because the offset of arguments within the buffer is the same for all commands, there is enough room left for the HCI parameters. Pay attention to the use of the sizeof parameter in the function. Ensure that the structures are packed and int is 4 bytes long or otherwise change the int type to the long type. 
+</p><p>The function call to the SPI driver submits a packet for actual transmission: 
+</p>
+<pre>SpiWrite(pucBuff, ucArgsLength + sizeof(hci_cmnd_hdr_t));
+</pre>
+<p>This triggers a Host write operation to the CC3000 device and only after the whole transaction over the SPI finishes does the hci_command_send function return. The same blocking behavior is observed in all HCI layer functions. 
+</p>
+<h2> <span class="mw-headline" id="CC3000_Serial_Port_Interface"> <a href="http://processors.wiki.ti.com/index.php/CC3000_Serial_Port_Interface_(SPI)" title="CC3000 Serial Port Interface (SPI)">CC3000 Serial Port Interface</a>  </span></h2>
+<p>This section is a brief overview for the CC3000 serial port interface.<br>
+<img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b>  Please refer to the <b><a href="http://processors.wiki.ti.com/index.php/CC3000_Serial_Port_Interface_(SPI)" title="CC3000 Serial Port Interface (SPI)"> cc3000 Serial Port Interface's</a></b> detailed description. This page will address, master write /read operations, bytes explanation, and provide you with sample code.
+</p>
+<h3> <span class="mw-headline" id="Overview_2"> Overview  </span></h3>
+The SPI is based on the five-line, master/slave communication model as shown in the following figure: <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:606px;"><a href="http://processors.wiki.ti.com/index.php/File:Masterslave_communication_model.jpg" class="image"><img alt="" src="./CC3000 Host Programming Guide_files/Masterslave_communication_model.jpg" width="604" height="161" class="thumbimage"></a>  <div class="thumbcaption">Masterslave communication model.jpg</div></div></div></div> <br> 
+<p>The lines are described as follows: 
+</p>
+<table class="FCK__ShowTableBorders">
+
+<tbody><tr style="background: #4488cc; color: #ffffff">
+<th> I/O
+</th><th> Description
+</th></tr>
+<tr>
+<td> CLCK<sup>(1)</sup>
+</td><td> Clock (0 to 16 MHz) from host to slave
+</td></tr>
+<tr style="background: #eeeeee">
+<td> nCS<sup>(2)</sup>
+</td><td> nCS (active low) signal from host to slave
+</td></tr>
+<tr>
+<td> MOSI
+</td><td> Data from host to slave
+</td></tr>
+<tr style="background: #eeeeee">
+<td> IRQ<sup>(3)</sup>
+</td><td> Interrupt from slave to host
+</td></tr>
+<tr>
+<td> MISO
+</td><td> Data from slave to host
+</td></tr></tbody></table>
+<p><br> 
+</p>
+<ul><li><sup>(1)</sup><b>CLCK</b> provides a clock to the SPI interface on the CC3000 device. 
+</li><li><sup>(2)</sup><b>nCS</b> selects a CC3000 device, indicating that a master wants to communicate to the CC3000 device. 
+</li><li><sup>(3)</sup><b>IRQ</b> is a dual-purpose slave to the master direction line: in SPI IDLE state while no data transfer is active, driving IRQ low indicates to the master that the CC3000 device has data to pass to it; driving IRQ low following nCS deassertion indicates that the CC3000 device is ready to receive data. All behaviors are explained in detail in the following sections.
+</li></ul>
+<h3> <span class="mw-headline" id="Protocol_Description"> Protocol Description  </span></h3>
+<p>The SPI protocol is used to communicate with the CC3000 device from the host MCU that is acting as the SPI master while the CC3000 device is the SPI slave. The protocol is an extension of the existing standard SPI. The endianness on transport is assumed to be most-significant bit (MSB) first. 
+</p><p>The clock and phase settings for the SPI are configured such that the data is sampled on the falling edge of the clock cycle. Note that different MCU may use different naming conventions in order to&nbsp;configure SPI clock phase and polarity, For example, MSP430 uses UCCKPL and UCCKPH for clock polarity and phase respectively. Both are set to 0, indicating that the data is sampled on the falling edge of the clock cycle. The more generic convention is CPOL and CPHA, however, in order to configure sampling on the falling edge of the clock cycle, CPHA is set to 1. 
+</p>
+All data sent or received over the SPI interface must be 16-bit aligned. A padding byte is added where required. Each packet passing on the SPI bus consists of a 5-byte SPI header followed by user data and optionally by a padding byte so that the whole length is 16-bit aligned, as shown in the next Figure. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:1010px;"><a href="http://processors.wiki.ti.com/index.php/File:SPI_header.jpg" class="image"><img alt="SPI header.jpg" src="./CC3000 Host Programming Guide_files/SPI_header.jpg" width="1008" height="182" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> 
+<p><br> 
+</p><p>The first byte of the header is an operation opcode (READ or WRITE) followed by two bytes that indicate the size of the payload length (including the alignment byte). Two busy bytes then follow to conclude the header. 
+</p><p>The data payload directly follows the last byte of the header. The padding byte is added when the length of the payload part of the packet is even. <br> 
+</p><p><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b>  Please refer to the <b><a href="http://processors.wiki.ti.com/index.php/CC3000_Serial_Port_Interface_(SPI)" title="CC3000 Serial Port Interface (SPI)"> cc3000 Serial Port Interface's</a></b> detailed description. This page will address, master write /read operations, bytes explanation, and provide you with sample implementation.
+</p>
+<h2> <span class="mw-headline" id="CC3000_NVMEM_API.E2.80.99s"> CC3000 NVMEM API’s  </span></h2>
+<p><b>Overview</b>
+</p><p>CC3000 uses internal NVMEM (EEPROM) in order to store system related parameters and use them when appropriate. Given this new feature, it is now possible for a host application to use and manage a part of the CC3000 internal EEPROM for its own purposes. Thus, the EEPROM is divided into two main sections, system files and user files. The system files remain as before. The user files make use of the remaining space. 
+</p><p>The EEPROM stores radio frequency (RF) calibration parameters, network configuration parameters, and patches. Most NVMEM locations are not written directly by the CC3000 host driver but rather indirectly by API calls that trigger NVMEM changes. Special API functions allow read or write operations on the NVMEM by the CC3000 host driver. 
+</p><p><span style="color: Red"><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b> The structure mentioned here applies to the latest service pack (1.10)</span>. For older service pack such as 1.7, please refer to <a href="http://processors.wiki.ti.com/index.php/CC3000_EEPROM_user_interface_-_archives" title="CC3000 EEPROM user interface - archives">EEPROM user interface up to service pack 1p7</a>.
+</p>
+<h4> <span class="mw-headline" id="EEPROM_structure_overview"> EEPROM structure overview  </span></h4>
+<p>The end of system files section is address 0x6A30. Taking into account the 32KB EEPROM size, the remaining size for the user files section is 5584 bytes. However, the two first file entries are used for CC3000 internal use as the following table describes: 
+</p><p>&nbsp; 
+</p>
+<table style="width: 1123px; height: 524px" cellspacing="1" cellpadding="1" width="1123" border="3">
+
+<tbody><tr>
+<th scope="col"> File ID<br>(numerical)<br>
+</th><th scope="col"> File ID
+</th><th scope="col"> File address(offset)<br>
+</th><th scope="col"> File Size (bytes)<br>
+</th><th scope="col"> Real Used Size (bytes)<br>
+</th><th scope="col"> Parameter <br>
+</th></tr>
+<tr>
+<td> 0
+</td><td> NVMEM_NVS_FILEID
+</td><td> 0x50
+</td><td> 0x1A0
+</td><td> 0x1A
+</td><td> RF Calibration results table(generated automatically by TX Bip)
+</td></tr>
+<tr>
+<td> 1
+</td><td> NVMEM_NVS_SHADOW_FILEID
+</td><td> 0x1F0
+</td><td> 0x1A0
+</td><td> 0x1A
+</td><td> &nbsp;
+</td></tr>
+<tr>
+<td> 2
+</td><td> NVMEM_WLAN_CONFIG_FILEID
+</td><td> 0x390
+</td><td> 0x1000
+</td><td> 0x64
+</td><td> WLAN configuration
+</td></tr>
+<tr>
+<td> 3
+</td><td> NVMEM_WLAN_CONFIG_SHADOW_FILEID
+</td><td> 0x1390
+</td><td> 0x1000
+</td><td> 0x64
+</td><td> &nbsp;
+</td></tr>
+<tr>
+<td> 4
+</td><td> NVMEM_WLAN_DRIVER_SP_FILEID&nbsp;
+</td><td> 0x2390
+</td><td> 0x2000
+</td><td> variable
+</td><td> WLAN Driver ROM Patches
+</td></tr>
+<tr>
+<td> 5
+</td><td> NVMEM_WLAN_FW_SP_FILEID
+</td><td> 0x4390
+</td><td> 0x2000
+</td><td> variable
+</td><td> WLAN FW Patches
+</td></tr>
+<tr>
+<td> 6
+</td><td> NVMEM_MAC_FILEID
+</td><td> 0x6390
+</td><td> 0x10
+</td><td> 0x10
+</td><td> 6 bytes of MAC address
+</td></tr>
+<tr>
+<td> 7
+</td><td> NVMEM_FRONTEND_VARS_FILEID
+</td><td> 0x63A0
+</td><td> 0x10
+</td><td> 0x10
+</td><td> &nbsp;
+</td></tr>
+<tr>
+<td> 8
+</td><td> NVMEM_IP_CONFIG_FILEID
+</td><td> 0x63B0
+</td><td> 0x40
+</td><td> 0x40
+</td><td> IP configuration
+</td></tr>
+<tr>
+<td> 9
+</td><td> NVMEM_IP_CONFIG_SHADOW_FILEID
+</td><td> 0x63F0
+</td><td> 0x40
+</td><td> 0x40
+</td><td> &nbsp;
+</td></tr>
+<tr>
+<td> 10
+</td><td> NVMEM_BOOTLOADER_SP_FILEID
+</td><td> 0x6430
+</td><td> 0x400
+</td><td> variable
+</td><td> Bootloader Patches
+</td></tr>
+<tr>
+<td> 11
+</td><td> NVMEM_RM_FILEID
+</td><td> 0x6830
+</td><td> 0x200
+</td><td> 0x7F
+</td><td> Radio parameters
+</td></tr>
+<tr>
+<td> 12
+</td><td> NVMEM_AES128_KEY_FILEID
+</td><td> 0x6A30
+</td><td> 0x10
+</td><td> 0x10
+</td><td> AES128 key file
+</td></tr>
+<tr>
+<td> 13
+</td><td> NVMEM_SHARED_MEM_FILEID
+</td><td> 0x6A40
+</td><td> 0x50
+</td><td> 0x44
+</td><td> Host-CC3000 shared memory file
+</td></tr>
+<tr>
+<td> 14
+</td><td> NVMEM_USER_FILE_1_FILEID
+</td><td> 0x6A90
+</td><td> variable
+</td><td> variable
+</td><td> 1st user file
+</td></tr>
+<tr>
+<td> 15
+</td><td> NVMEM_USER_FILE_2_FILEID
+</td><td> variable
+</td><td> variable
+</td><td> variable
+</td><td> 2nd user file
+</td></tr></tbody></table>
+<p><br> 
+</p><p><span style="line-height: 1.5em;">The fileIDs can be grouped as follow</span> 
+</p>
+<ol><li><u><b>Offsets 0, 1, 3, 7, 9</b></u>: CC3000 generated section: Refers to the part of NVMEM that is self-generated by the CC3000 device or to the section that is generally updated by module vendors. 
+</li><li><u><b>Offsets 2, 6, 8, 11</b></u>: Customer's configurable section: Refers to the section that is, mainly indirectly, configured by the customer. 
+</li><li><b><u>Offsets 4, 5, 10</u></b>: TI service pack section: Programmed with the help of APIs but with content provided by TI. 
+</li><li><u><b>Offsets 12, 13</b></u>: These two sections are used for smart config<br> <img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b> It is advised not to address this file for other purposes even when not using encrypted Smart Config. 
+<dl><dd><ul><li><b>NVMEM_AES128_KEY_FILEID</b><i><b>:</b> </i>used by CC3000 to store the AES128 key used during Smart Config procedure in case the procedure is encrypted. <i><br></i> 
+</li><li>'<i>NVMEM_SHARED_MEM_FILEID'</i><b>:</b> used by CC3000 to interact with the Host during Smart Config procedure.<br> 
+</li></ul>
+</dd></dl>
+</li><li><b><u>Offsets 14, 15</u></b>: User Files<br>Taking all the above into account, the user is left with 5488 bytes divided into up to 2 files: NVMEM_USER_FILE_1_FILEID and NVMEM_USER_FILE_2_FILEID. <br> <br>
+</li></ol>
+<p>EEPROM data consists of several files accessible either directly or indirectly. The indirect approach triggers the CC3000 host, which at the end writes to EEPROM. The direct approach triggers CC3000 NVMEM API calls to directly write to the file within EEPROM. Each file has a unique ID and, depending on the file, either a constant or variable size. The following files are modified by customers by triggering the appropriate APIs (indirect approach): 
+</p>
+<ul><li>NVMEM_WLAN_CONFIG_FILEID, by adding or removing WLAN policies, as described , by adding or removing WLAN profiles, both described in the <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#EEPROM_Update" class="external text" rel="nofollow" target="_blank">EEPROM Update</a> section. 
+</li><li>NVMEM_IP_CONFIG_FILEID, by changing the IP configuration by the help of Netapp IP Configuration APIs, see <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#EEPROM_Update" class="external text" rel="nofollow" target="_blank">EEPROM Update</a> section. 
+</li><li>NVMEM_WLAN_DRIVER_SP_FILEID, NVMEM_BOOTLOADER_SP_FILEID, and NVMEM_WLAN_FW_SP_FILEID can be written using either method.
+</li></ul>
+<table style="height: 123px" cellspacing="1" cellpadding="1" border="1">
+
+<tbody><tr>
+<td> <b>The content of these files is a patch provided by Texas Instruments for different parts of the CC3000 device. Patches can be upgraded but only using the files provided by TI.</b>
+</td></tr></tbody></table>
+<h4> <span class="mw-headline" id="EEPROM_Update"> EEPROM Update  </span></h4>
+<h5> <span class="mw-headline" id="MAC_Address_update_process"> MAC Address update process  </span></h5>
+<p>The EEPROM can be updated directly using NVMEM APIs of the CC3000 device and indirectly using different APIs that invoke updates, such as the addition of profiles, which stores a profile in the NVMEM. It is recommended that most EEPROM content not be altered directly. The file that can be altered using NVMEM_Write operation is: MAC Address file – file ID NVMEM_MAC_FILEID. 
+</p>
+The following figure shows the MAC update process. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:MAC_update_process.png" class="image"><img alt="MAC update process.png" src="./CC3000 Host Programming Guide_files/500px-MAC_update_process.png" width="500" height="386" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:MAC_update_process.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> <br> 
+<h5> <span class="mw-headline" id="Patches_Update_Process_.E2.80.93_Download_of_Patches_from_Host"> Patches Update Process – Download of Patches from Host  </span></h5>
+<p>CC3000 patches can be sored in the CC3000 Host and downloaded from it. Please refer to the CC3000 Patch Programmer application and guide.<br>
+</p>
+<h2> <span class="mw-headline" id="CC3000_WLAN_API"> CC3000 WLAN API  </span></h2>
+<p><b>Overview</b>
+</p><p>CC3000 WLAN APIs provide a way for the application to trigger the connection process, update WLAN policy, and perform scans to discover the WLAN AP. This section describes basic activities required to implement WLAN operations. The following basic operations are required to be performed on the CC3000 device related to WLAN. 
+</p>
+<ul><li>First-time configuration: Required to configure the CC3000 product to connect to the AP; assumes that no I/O ports exist on the product. 
+</li><li>WLAN connection creation and disconnection 
+</li><li>WLAN profiles definition and policy definition 
+</li><li>WLAN scan configuration and read of WLAN scan results
+</li></ul>
+<h3> <span class="mw-headline" id="Creating_Profiles_and_Policies"> Creating Profiles and Policies  </span></h3>
+<p>WLAN policy defines three options available to connect the CC3000 device to the AP: 
+</p>
+<ul><li>If Auto Connect is turned on, the C3000 device tries to connect to any AP it detects during scanning. To set this option, use wlan_ioctl_set_connection_policy(1, 0, 0). 
+</li><li>If Fast Connect is set, the CC3000 device tries to automatically reconnect to the last AP connected to each time the connection fails or the device is rebooted. To set this option, use wlan_ioctl_set_connection_policy(0, 1, 0). 
+</li><li>If Use Profiles is set, the CC3000 device tries to connect to an AP from profiles. To turn this option on, use wlan_ioctl_set_connection_policy(0, 0, 1).
+</li></ul>
+<p><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b>  <span style="color: Green"><b>The device must be reset before a policy can be applied. Profiles must first be added to the CC3000 device before they can be used.</b></span>
+<br><br>
+A WLAN profile provides the information required to connect to a given AP, including the SSID, security parameters, and AP keys. Each profile describes one AP. Because profiles are stored in the NVMEM, they are preserved during device reset. To add a profile, use the following API: <i>wlan_add_profile(SSID, security params, priority)&nbsp;</i>; 
+</p><p><b>Up to 7 profiles are supported.</b> <br>If several profiles configured the device chose the highest priority profile, within each priority group, device will chose profile based on security policy, signal strength, etc parameters. <br>All the profiles are stored in CC3000 NVMEM.
+</p>
+<h3> <span class="mw-headline" id="Creating_WLAN_Connection"> Creating WLAN Connection  </span></h3>
+<p>The following methods can be used to create a WLAN connection: 
+</p>
+<ul><li>The first-time configuration feature of the CC3000 device. This is a simple way to create a profile. Afterward, if the policy allows connecting with profiles, connection is established automatically. 
+</li><li>Connecting explicitly to a given AP 
+</li><li>Using WLAN policy and profiles to define which AP to connect to and then creating a connection indirectly by letting the CC3000 device scan and select the AP according to those definitions. No matter by what means the connection was created, an API netapp_ipconfig can be used to get an information on current AP the device is connected to and on the IP settings of the device.
+</li></ul>
+<h4> <span class="mw-headline" id="First_time_configuration"> First time configuration  </span></h4>
+<p>The first-time configuration is used to set up a WLAN configuration of the device when the final product (for example, a sensor connected to the CC3000 device) has no input/output capability. For more information on the first-time configuration process, see the <a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration" class="external text" rel="nofollow" target="_blank">CC3000 First-Time Configuration Guide Wiki</a>. 
+</p>
+The first-time configuration provides a means to create a profile that is stored in the CC3000 NVMEM. The connection behavior depends on the policy. The following figure shows a generic flow of operation for the first-time configuration and assumes that the device wants to connect automatically to the AP described by the profile. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:FirstTimeConfig_process.PNG" class="image"><img alt="FirstTimeConfig process.PNG" src="./CC3000 Host Programming Guide_files/500px-FirstTimeConfig_process.PNG" width="500" height="403" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:FirstTimeConfig_process.PNG" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> <br>
+<p>Please note that there is currently a limitation in First Time Configuration: Up to 3 First Time Configuration profiles can be stored in the non-volitile memory. Attempt to run 4-th time First Time Configuration, may succeed, yet the profile will not be stored in the NVMEM and device will not be able to establish a connection. Note also that running first time configuration twice to the same AP, will create 2 different profiles. 
+</p>
+<h4> <span class="mw-headline" id="Creating_WLAN_Connection_explicitly"> Creating WLAN Connection explicitly  </span></h4>
+If the SSID of the AP to connect is known, the CC3000 device can be required to connect explicitly to this AP. The application can require one-time configuration to the AP, in which case the policy must be set to all zero, or it can require connecting to the same AP each time. The following figure shows the sequence required to connect explicitly to the AP one time. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Creating_an_explicit_connection_to_AP.png" class="image"><img alt="Creating an explicit connection to AP.png" src="./CC3000 Host Programming Guide_files/500px-Creating_an_explicit_connection_to_AP.png" width="500" height="376" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Creating_an_explicit_connection_to_AP.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div>&nbsp;<br>*<b>Please Note:</b> Using explicit connection to AP configured with security type WEP, please confirm that the key is set as ASCII and not as HEX.
+<p><br>
+</p>
+<h4> <span class="mw-headline" id="Using_WLAN_policy_and_profiles"> Using WLAN policy and profiles  </span></h4>
+<p>WLAN policy determines how the CC3000 device automatically connects to the AP. More specifically, the wlan_set_connection_policy controls the following: 
+</p>
+<ul><li>If Auto Connect is turned on, the CC3000 device tries to connect to any AP it detects during scanning. 
+</li><li>If Fast Connect is set, the CC3000 device tries to reconnect automatically to the AP with which it was last connected. 
+</li><li>If Use Profiles is set, the CC3000 device tries to connect to an AP from profiles.
+</li></ul>
+Profiles describe an AP: Each profile includes the SSID of the AP together with the security parameters required to connect to the AP. To add a profile and connect to the AP using the profile, the flow shown in the figure below can be used. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Connecting_by_a_help_of_policy_and_profiles.png" class="image"><img alt="Connecting by a help of policy and profiles.png" src="./CC3000 Host Programming Guide_files/500px-Connecting_by_a_help_of_policy_and_profiles.png" width="500" height="344" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Connecting_by_a_help_of_policy_and_profiles.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> 
+<p><br>
+</p><p><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b> <span style="color: Green"><b>Multiple profiles were added In the flow shown in the figure below. In this situation, connection is attempted to the highest priority AP. If connection to the highest priority AP fails, connection is attempted to the next highest-priority AP, and so on until a connection is successful.</b></span>
+</p>
+<h3> <span class="mw-headline" id="Performing_WLAN_scan"> Performing WLAN scan  </span></h3>
+A WLAN scan detects nearby APs along with the received signal-strength indication (RSSI) at which the APs are heard and allows the CC3000 device to connect to the detected APs (see figure below). The first WLAN scans must be enabled using the wlan_ioctl_set_scan_params WLAN API; the following scan results can then be read using the wlan_ioctl_get_scan_results WLAN API. <br><br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Enabling_and_reading_scan_results.png" class="image"><img alt="" src="./CC3000 Host Programming Guide_files/500px-Enabling_and_reading_scan_results.png" width="500" height="376" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Enabling_and_reading_scan_results.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Enabling and reading scan results.png</div></div></div></div> <br>
+<h2> <span class="mw-headline" id="CC3000_Socket_API"> CC3000 Socket API  </span></h2>
+<p><b>Overview</b>
+</p><p>Socket layer APIs establish TCP/IP connectivity between devices, assuming that the underlying WLAN transport is initialized and connected. Because all API socket layer APIs are blocking by nature, the socket layer APIs are almost identical to the standard BSD layer APIs. 
+</p><p><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b> <b>Socket operations must follow a successful WLAN connection.</b>
+</p>
+<h3> <span class="mw-headline" id="Data_Transmission_and_reception"> Data Transmission and reception  </span></h3>
+<h4> <span class="mw-headline" id="Data_Transmission_Overview"> Data Transmission Overview  </span></h4>
+Data transmission occurs through the socket layer interface using the standard commands, Send and Sendto, that are part of the BSD API. Selecting which command to use depends on the socket type: for TCP, use Send; for UDP, use Sendto. The fact that Send and Sendto are blocking APIs does not guarantee that the data has been sent over the air on return from the function call rather than received and stored in the CC3000 internal TX queue. Moreover, the CC3000 host driver and the CC3000 device exchange information on the number of free buffers during device initialization. From that point on, the CC3000 host driver does not submit for transmission packets if there are no free buffers on the CC3000 side. The following figure shows how this is achieved: <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Registration_process.jpg" class="image"><img alt="Registration process.jpg" src="./CC3000 Host Programming Guide_files/500px-Registration_process.jpg" width="500" height="552" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Registration_process.jpg" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> 
+<p><br>At initialization the number of free buffers is stored in a variable on the CC3000 host driver side. Each attempt to send tests the variable. If its value is more than 0, sending the packet proceeds and the value of the variable is reduced by 1. Otherwise, the packet must wait in a busy loop until the value becomes greater than 0. The number of completed packets event comes as an unsolicited event; thus, a frequency of the transmission operation influences a frequency of calls for the unsolicited event handler. 
+</p>
+<h4> <span class="mw-headline" id="Data_Reception_Overview"> Data Reception Overview  </span></h4>
+<p>Data reception is achieved using the Recv or Receive_from command, depending on the socket type. Use Recv for TCP sockets; use Recv_from for UDP sockets. 
+</p>
+<table style="height: 123px" cellspacing="1" cellpadding="1" border="1">
+
+<tbody><tr>
+<td> <b>Concatenation is not supported by the CC3000 host driver. If the socket transmits packets of length N, the reception flow expects to read up to N bytes.</b>
+</td></tr></tbody></table>
+Receive/Receive_from commands function as blocking APIs: The function returns either on timeout of socket activity or when data is received. If it is required to poll for data presence on a given socket, select functionality can be used, as shown in the figure below. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Take_action_based_on_return_sockets.jpg" class="image"><img alt="Take action based on return sockets.jpg" src="./CC3000 Host Programming Guide_files/500px-Take_action_based_on_return_sockets.jpg" width="500" height="393" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Take_action_based_on_return_sockets.jpg" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> <br>The following code describes the use of the select functionality: 
+<pre>FD_ZERO( &amp;readSet );
+FD_ZERO( &amp;writeSet );
+FD_ZERO( &amp;exceptSet );
+        
+FD_SET( ReadSock,  &amp;readSet); 
+FD_SET(WriteSock,   &amp;writeSet);  
+        
+rc = select( MAX(ReadSock, WriteSock)+1, &amp;readSet, &amp;writeSet, &amp;exceptSet, timeout );
+        	
+// perform send on the write socket if it is ready to receive next chunk of data
+if (FD_ISSET(WriteSock, &amp;writeSet) )
+{
+….
+}
+            
+// perform read on read socket if data available
+if (FD_ISSET(ReadSock,  &amp;readSet))
+{
+// perform receive
+} </pre>
+<h3> <span class="mw-headline" id="TCP_Socket_API"> TCP Socket API  </span></h3>
+<h4> <span class="mw-headline" id="Client_TCP_socket_connection"> Client TCP socket connection  </span></h4>
+The following figure shows the flow required to open a regular TCP client connection. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:TCP_socket_connection.png" class="image"><img alt="TCP socket connection.png" src="./CC3000 Host Programming Guide_files/500px-TCP_socket_connection.png" width="500" height="386" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:TCP_socket_connection.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> <br>
+<h4> <span class="mw-headline" id="Server_TCP_sockets_connection"> Server TCP sockets connection  </span></h4>
+The main distinction between a client connection and a server connection is that when establishing the server TCP connection, a stage occurs during which the device listens on the server socket for incoming connections. The connection is established only after a request arrives. On the other hand, the client TCP connection is established as soon as connect() is called. The following shows the flow used to establish a server connection. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Server_side_connection_establishment_flow.png" class="image"><img alt="Server side connection establishment flow.png" src="./CC3000 Host Programming Guide_files/500px-Server_side_connection_establishment_flow.png" width="500" height="385" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Server_side_connection_establishment_flow.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div>&nbsp;<br><b>*Please Note</b> that The accept() API call is now supports the non-blocking mode of operation. 
+<p>&nbsp;Using non-blocking accept() mode, the host user application will not be stalled while the TCP connection with the remote client has not been established yet. 
+</p><p>&nbsp;For more information please refer to: <a href="http://processors.wiki.ti.com/index.php/Non_blocking_accept" title="Non blocking accept">Non blocking accept wiki</a> page.
+<br>
+<br>
+</p>
+<h4> <span class="mw-headline" id="Sending_and_Receiving_data_over_TCP_socket"> Sending and Receiving data over TCP socket  </span></h4>
+<p>Data is transmitted and received over TCP sockets after a connection is established. The BSD API Send and Recv commands are used with TCP sockets; Sendto and Recvfrom API commands are used transmit and receive data with UDP sockets. 
+</p><p>Because the data is sent over the TCP connection-oriented socket, the peer device ACKs the data only once when TCP_WINDOW is full or after timeout expires. Usually TCP_WINDOW is 1 KB; thus, sending a TCP packet that is too short significantly decreases network performance. 
+</p>
+<h3> <span class="mw-headline" id="UDP_Socket_API"> UDP Socket API  </span></h3>
+<h4> <span class="mw-headline" id="Client_UDP_socket_connection"> Client UDP socket connection  </span></h4>
+Because of the connectionless nature of the UDP, the client UDP connection requires only the creation of the socket (see figure below). <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Client_UDP_connection.png" class="image"><img alt="Client UDP connection.png" src="./CC3000 Host Programming Guide_files/500px-Client_UDP_connection.png" width="500" height="390" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Client_UDP_connection.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> <br>
+<p>Please note that it is recommended to run a gethostbyname bsd command before the first ever transmission of data over the new socket.In case DNS server, which is required by gethostbyname is unavailable, it is recommended to run netapp_ping_send API command which is available in the group of netapp API's. 
+</p>
+<h4> <span class="mw-headline" id="Server_UDP_socket_connection"> Server UDP socket connection  </span></h4>
+Running the UDP server requires only that the bind operation be performed on the created socket. The Sendto and Recvfrom API commands are used to send or receive data (see figure below). <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Server_UDP_connection.png" class="image"><img alt="Server UDP connection.png" src="./CC3000 Host Programming Guide_files/500px-Server_UDP_connection.png" width="500" height="390" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Server_UDP_connection.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div>&nbsp;
+<p>&nbsp;
+</p>
+<h3> <span class="mw-headline" id="TX_complete_indication"> TX complete indication  </span></h3>
+<p>The TX complete feature's main functionality is to indicate the host whenever it is safe to shutdown CC3000. 
+</p><p>For more detailed description you may refer to <a href="http://processors.wiki.ti.com/index.php/TX_Complete_Feature" title="TX Complete Feature">TX Complete Feature</a>.
+</p><p><br>
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="CC3000_NETWORK_CONFIGURATION_API"> CC3000 NETWORK CONFIGURATION API  </span></h2>
+<p><b>Overview</b>
+</p><p>Configuration API is provided in order to allow host to perform basic configuration of CC3000 device such as: 
+</p>
+<ul><li>Configuring IP address either static or DHCP. 
+</li><li>Setting up the MAC address of the device. 
+</li><li>Reading the current network status.
+</li></ul>
+<h3> <span class="mw-headline" id="Configuring_MAC_and_IP_Address"> Configuring MAC and IP Address  </span></h3>
+<p>Configuring the MAC address requires running the NVMEM Write API call with file ID 6. 
+</p><p>The IP address has two possible configurations: Assignment of the static IP address or using DHCP. 
+</p>
+For the static IP configuration, the NetappDHCP API call is triggered with a non-0 IP address and subnetmask parameters. Otherwise, the 0 IP address is passed to the API call and informs a device that DHCP must be used. The following figure shows the required behavior. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="http://processors.wiki.ti.com/index.php/File:Configuring_MAC_and_ip_address.png" class="image"><img alt="Configuring MAC and ip address.png" src="./CC3000 Host Programming Guide_files/500px-Configuring_MAC_and_ip_address.png" width="500" height="386" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://processors.wiki.ti.com/index.php/File:Configuring_MAC_and_ip_address.png" class="internal" title="Enlarge"><img src="./CC3000 Host Programming Guide_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div></div> 
+<p><br>
+</p>
+<h3> <span class="mw-headline" id="Reading_network_status"> Reading network status  </span></h3>
+<p>A user application might want to read the network status of the connection; for example, an IP address received by the DHCP or the AP of a device connected using profiles (if more than one profile is defined). 
+</p><p>The following API call can be used to read the network status of the connection: 
+</p>
+<pre>void netapp_ipconfig( tNetappIpconfigRetArgs * ipconfig )
+</pre>
+<p>Where the pointer to the tNetappIpconfigRetArgs points to the structure filled with the configuration on return from the function call. For details on the structure, see the <a href="http://processors.wiki.ti.com/index.php/CC3000_Wi-Fi_for_MCU#CC3000_Doxygen_APIs" class="external text" rel="nofollow" target="_blank">CC3000 API Doxygen Documentation</a>. 
+</p>
+<pre>void netapp_ipconfig( tNetappIpconfigRetArgs * ipconfig )
+</pre>
+<p><br>
+</p>
+<h1> <span class="mw-headline" id="Appendix">Appendix </span></h1>
+<h2> <span class="mw-headline" id="CC3000_Build_Options"> <br>CC3000 Build Options  </span></h2>
+<p>CC3000 Host Driver is compiled with optimization feature enabled in both, IAR and CCS IDE. 
+</p><p>The setup configuration is described in the following table: 
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</p>
+<table cellspacing="2" cellpadding="15" align="center" border="1">
+
+<tbody><tr>
+<th scope="col"> &nbsp;&nbsp;
+</th><th scope="col" colspan="2"> IAR &nbsp;
+</th><th scope="col"> CCS
+</th></tr>
+<tr>
+<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td><td> <b>&nbsp;&nbsp;MSP430</b>
+</td><td> &nbsp;&nbsp;&nbsp; <b>Stellaris</b>
+</td><td> &nbsp;&nbsp;&nbsp; <b>MSP430</b>
+</td></tr>
+<tr>
+<td> IDE version
+</td><td> &nbsp;&nbsp;&nbsp; 5.50.2
+</td><td> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;6.40.2
+</td><td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.2
+</td></tr>
+<tr>
+<td> Platform version
+</td><td> MSP430F5739
+</td><td> LM4F232H5QD
+</td><td> MSP430F5739
+</td></tr>
+<tr>
+<td> SW Release version
+</td><td> &nbsp;&nbsp; 1.12.6.10
+</td><td> &nbsp;&nbsp;&nbsp; &nbsp;4.12.6.10
+</td><td> &nbsp;&nbsp; &nbsp;1.12.6.10
+</td></tr>
+<tr>
+<td> Optimization flag
+</td><td> high-balanced&nbsp;
+</td><td> &nbsp;high-balanced
+</td><td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;-O2
+</td></tr></tbody></table>
+<p><br><br>
+</p><p>The optimization configuration on IAR is applied as described in the following figure. 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:557px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_configuration.PNG" class="image"><img alt="Cc3000 configuration.PNG" src="./CC3000 Host Programming Guide_files/Cc3000_configuration.PNG" width="555" height="516" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div>&nbsp; 
+<p>The optimization configuration on CCS is applied as described in the following figure. 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:559px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_configuration_CCS.PNG" class="image"><img alt="Cc3000 configuration CCS.PNG" src="./CC3000 Host Programming Guide_files/Cc3000_configuration_CCS.PNG" width="557" height="424" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="Remote_Debug_Capabilities"> <a href="http://processors.wiki.ti.com/index.php/CC3000_Logger" title="CC3000 Logger">Remote Debug Capabilities</a> </span></h2>
+<p>In order to expedite debugging and support, it is now possible to fetch logging information from the CC3000 internals. 
+</p><p>The logging information is divided into two levels, driver and firmware. Each level is retrieved via a separate hardware pin that is available from CC3000 chipset. 
+</p><p>The procedure that the customer needs to follow is very simple and does not require any special technical knowledge.
+</p><p><img alt="Note" src="./CC3000 Host Programming Guide_files/18px-Light_bulb_icon.png" width="18" height="25"><b>Note:</b> For more information please refer to: <a href="http://processors.wiki.ti.com/index.php/CC3000_Logger" title="CC3000 Logger">Logger Capabilities</a> page.
+</p>
+<h2> <span class="mw-headline" id="Memory_consumption.C2.A0"> Memory consumption&nbsp;  </span></h2>
+<h3> <span class="mw-headline" id="Flash_consumption"> <br>Flash consumption  </span></h3>
+<p>In general, the flash memory contains code and constant variables only. 
+</p><p>The CC3000 host driver code size in MSP430F5739 (when compiled in IAR high balanced option) is ~7.2 KB. 
+</p><p>The programmer must take into account the additional code required by the application when calculating the total amount of code for the program. <br>
+</p>
+<h3> <span class="mw-headline" id="RAM_consumption"> RAM consumption  </span></h3>
+<p>The RAM size breaks down into global variables, buffers and stack. 
+</p>
+<h4> <span class="mw-headline" id="Stack"> Stack  </span></h4>
+<p>The stack size is derived from the most demanding API. Please note that the full call stack needs to be considered. The programmer must take into account the additional stack required by the application and configure it accordingly prior to compilation. Failing to do so may result in stack overrun during run-time.<br>In addition, different platforms may yield different stack size requirements.<br>The stack size required for the CC3000 host driver on MSP430F5739, using IAR high balanced optimization is <b>~190 bytes.<br></b>
+</p>
+<h4> <span class="mw-headline" id="Global_variables"> Global variables  </span></h4>
+<p>The global variables used by the Host Driver and the SPI include explicit and implicit declarations. Implicit declarations denote global variables that are included automatically by the linker during link time.<br>The global variables size required for the CC3000 host driver in MSP430F5739, using IAR high balanced optimization is <b>99 bytes.<br></b>
+</p>
+<h4> <span class="mw-headline" id="TX_and_RX_buffers"> TX and RX buffers  </span></h4>
+<p>The buffer structure is as follows: 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:710px;"><a href="http://processors.wiki.ti.com/index.php/File:Buffers.PNG" class="image"><img alt="Buffers.PNG" src="./CC3000 Host Programming Guide_files/Buffers.PNG" width="708" height="30" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div>&nbsp; 
+<p>The CC3000 host driver supports flexible buffers size for TX and RX. 
+</p><p>The size can be varied from a pre-defined minimum value to a pre-defined maximum value. 
+</p><p>The buffers size is set during compilation time. 
+</p><p>The TX buffer is used for sending commands and data to the CC3000. 
+</p><p>The RX buffer is used for receiving events and data from the CC3000. 
+</p><p>These buffers are composed of an SPI header, an HCI header, arguments and payload. 
+</p><p>The most demanding API in terms of buffer consumption consumes <b>119 bytes</b>. I.e. the minimal size for RX and TX buffers is 119 bytes each. 
+</p><p><br>
+</p><p><b>The calculation for the actual size of buffer for reception and transmission is as follows:</b> 
+</p>
+<br>Given the maximal data payload size that is expected to be received by application, the required buffer is<br><div class="csh"><pre class="c" style="font-family:monospace;">max<span style="color: #009900;">(</span>CC3000 MINIMAL RX BUFFER SIZE<span style="color: #339933;">,</span> DESIRED PAYLOAD DATA <span style="color: #339933;">+</span> HCI DATA HEADER SIZE <span style="color: #339933;">+</span> SPI HEADER SIZE <span style="color: #339933;">+</span> RECVFROM ARG LENGTH <span style="color: #339933;">+</span> <span style="color: #0000dd;">1</span><span style="color: #009900;">)</span></pre></div> <br>
+<p><br>E.g. For using RX data payload of 30 Bytes, the RX buffer size will be:<br>max(119, 30 + 5 + 5 + 24) = 119. 
+</p><p><br>E.g. For using RX data payload of 100 Bytes, the RX buffer size will be:<br>max(119, 100 + 5 + 5 + 24) = 134. 
+</p>
+<br>Given the maximal payload data size that is expected to be transmitted by application, the required buffer is<br><div class="csh"><pre class="c" style="font-family:monospace;">max<span style="color: #009900;">(</span>CC3000 MINIMAL TX BUFFER SIZE<span style="color: #339933;">,</span> DESIRED PAYLOAD DATA <span style="color: #339933;">+</span> HCI DATA HEADER SIZE <span style="color: #339933;">+</span> SPI HEADER SIZE <span style="color: #339933;">+</span> SENDTO ARG LENGTH <span style="color: #339933;">+</span> <span style="color: #0000dd;">1</span><span style="color: #009900;">)</span></pre></div> <br>
+<p>E.g. For using TX data payload of 30 Bytes, the TX buffer size will be:<br>max(119, 30 + 5 + 5 + 32) = 119. 
+</p><p><br>E.g. For using TX data payload of 100 Bytes, the TX buffer size will be:<br>max(119, 100 + 5 + 5 + 32) = 142.<br><br>The extra ‘1’ in the equations is used for overrun detection during runtime. 
+</p><p><br>
+</p><p><b>Note:</b> The maximum TX and RX payload size is 1468 bytes each (excluding the arguments size, HCI header and SPI header). It is the user responsibility to make sure the buffer size is not exceeded. 
+</p><p><b>Note: </b>In MSP430F5739 the TX and RX buffers are located in FRAM because of the MSP limited RAM size. Not every flash type can be used for TX and RX buffers.<br>
+</p><p><br>
+</p>
+<h3> <span class="mw-headline" id="Tiny_Driver_Compilation_Option"><a href="http://processors.wiki.ti.com/index.php/Tiny_Driver_Support" title="Tiny Driver Support"> Tiny Driver</a> Compilation Option  </span></h3>
+<p>Certain MCU have limited RAM and Flash size, therefore a Tiny Driver Compilation option exist. 
+</p><p>Tiny driver target is low cost MCU with small size of RAM and Flash: 512B RAM, 16KB flash. 
+</p><p>Using The Tiny Driver Compilation option will create a tiny version of our host driver with lower data, stack and code consumption. 
+</p><p>Doing that by removing non mandatory API (Using Compilation flag). 
+</p><p>Reduce overall RAM consumption size to ~256b and&nbsp;driver code size as much as possible. 
+</p><p>For more information please refer to: <a href="http://processors.wiki.ti.com/index.php/Tiny_Driver_Support" title="Tiny Driver Support">Tiny Driver Support wiki</a> page.
+</p>
+<h1> <span class="mw-headline" id="Site_Map"> Site Map  </span></h1>
+<dl><dd><ul><li><a href="http://processors.wiki.ti.com/index.php/CC3000" title="CC3000">CC3000 Main Page</a>
+</li></ul>
+</dd></dl>
+<p><br><br>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 369/1000000
+Post-expand include size: 448/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="hf-footer"></div><div class="hf-nsfooter"><table style="text-align:center; background:white; width:100%; text-align:left; height: 65px border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; border-width: 1px; border-style: solid;">
+<tbody><tr>
+<td width="305px"><a href="http://processors.wiki.ti.com/index.php/File:E2e.jpg" class="image"><img alt="E2e.jpg" src="./CC3000 Host Programming Guide_files/E2e.jpg" width="305" height="63"></a>
+</td><td><i>For technical support please post your questions at <a href="http://e2e.ti.com/" class="external free" rel="nofollow" target="_blank">http://e2e.ti.com</a>. Please post only comments about the article <b>CC3000 Host Programming Guide</b> here.</i>
+</td></tr></tbody></table>
+<table style="border-style:solid; border-width:1px; text-align:center; width:100%;">
+
+<tbody><tr style="font-size:150%;">
+<td rowspan="2"> <a href="http://processors.wiki.ti.com/index.php/File:Hyperlink_blue.png" class="image"><img alt="Hyperlink blue.png" src="./CC3000 Host Programming Guide_files/96px-Hyperlink_blue.png" width="96" height="96"></a>
+</td><td><b>Links</b>
+</td></tr>
+<tr>
+<td>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/microcontroller/arm_stellaris/overview.page" class="external text" rel="nofollow" target="_blank">ARM Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/arm.page" class="external text" rel="nofollow" target="_blank">ARM Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/davinci/device.page" class="external text" rel="nofollow" target="_blank">Digital Media Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/home.page" class="external text" rel="nofollow" target="_blank">Digital Signal Processing</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/home.page" class="external text" rel="nofollow" target="_blank">Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c6000-multicore/device.page" class="external text" rel="nofollow" target="_blank">Multi Core Processor</a>
+</td></tr></tbody></table>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c5000/device.page" class="external text" rel="nofollow" target="_blank">Ultra Low Power DSP</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/8-bit_value_line.page" class="external text" rel="nofollow" target="_blank">8 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/overview.page" class="external text" rel="nofollow" target="_blank">16 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/32-bit_c2000/overview.page" class="external text" rel="nofollow" target="_blank">32 bit Microcontroller MCU</a>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p><!-- HitBox Sub accounts Code START -->
+<script language="JavaScript" src="./CC3000 Host Programming Guide_files/metrics-min.js" type="text/javascript"></script>
+<!-- HitBox Sub accounts Code END -->
+</p></div><div class="printfooter">
+Retrieved from "<a href="./CC3000 Host Programming Guide_files/CC3000 Host Programming Guide.htm">http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://processors.wiki.ti.com/index.php/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wi-Fi" title="Category:Wi-Fi">Wi-Fi</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:CC3000" title="Category:CC3000">CC3000</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wireless_Connectivity" title="Category:Wireless Connectivity">Wireless Connectivity</a></span></div></div>				<!-- /catlinks -->
+			<!-- AC : 030309 : adding ArticleComments support -->
+      <!-- AC : 031809 : Adding patch from http://wiki.sanb.design.ti.com/twiki/bin/view/SDSApps/AddingArticleCommentsToEachPage -->
+      <a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_Host_Programming_Guide">Leave a Comment</a>			
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_Host_Programming_Guide" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><a href="./CC3000 Host Programming Guide_files/CC3000 Host Programming Guide.htm" title="View the content page [alt-c]" accesskey="c"><span>Page</span></a></li>
+					<li id="ca-talk" class="new"><a href="http://processors.wiki.ti.com/index.php?title=Talk:CC3000_Host_Programming_Guide&action=edit&redlink=1" title="Discussion about the content page [alt-t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h5><span>Variants</span><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="./CC3000 Host Programming Guide_files/CC3000 Host Programming Guide.htm"><span>Read</span></a></li>
+					<li id="ca-viewsource"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Programming_Guide&action=edit" title="This page is protected.
+You can view its source [alt-e]" accesskey="e"><span>View source</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Programming_Guide&action=history" title="Past revisions of this page [alt-h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://processors.wiki.ti.com/index.php" id="searchform">
+		<input type="hidden" name="title" value="Special:Search">
+				<input id="searchInput" name="search" type="text" title="Search Texas Instruments Embedded Processors Wiki [alt-f]" accesskey="f" value="">
+		<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists">
+		<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text">
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/images/tiexpres.png);" href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage"><a href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main Page</a></li>
+					<li id="n-All-pages"><a href="http://processors.wiki.ti.com/index.php/Special:AllPages">All pages</a></li>
+					<li id="n-All-categories"><a href="http://processors.wiki.ti.com/index.php/Special:Categories">All categories</a></li>
+					<li id="n-Popular-pages"><a href="http://processors.wiki.ti.com/index.php/Special:PopularPages">Popular pages</a></li>
+					<li id="n-Popular-authors"><a href="http://processors.wiki.ti.com/index.php/Special:MostPopularAuthors">Popular authors</a></li>
+					<li id="n-Popular-categories"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryHits">Popular categories</a></li>
+					<li id="n-Category-stats"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryStats">Category stats</a></li>
+					<li id="n-recentchanges"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="http://processors.wiki.ti.com/index.php/Special:Random" title="Load a random page [alt-x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="http://processors.wiki.ti.com/index.php/Help:Contents" title="The place to find out">Help</a></li>
+					<li id="n-Google-Search"><a href="http://processors.wiki.ti.com/index.php/GoogleSearch">Google Search</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- coll-print_export -->
+<div class="portal" id="p-coll-print_export">
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=book_creator&referer=CC3000+Host+Programming+Guide" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=render_article&arttitle=CC3000+Host+Programming+Guide&oldid=151021&writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Programming_Guide&printable=yes" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://processors.wiki.ti.com/index.php/Special:WhatLinksHere/CC3000_Host_Programming_Guide" title="List of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChangesLinked/CC3000_Host_Programming_Guide" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="http://processors.wiki.ti.com/index.php/Special:SpecialPages" title="List of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Programming_Guide&oldid=151021" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-smwbrowselink"><a href="http://processors.wiki.ti.com/index.php/Special:Browse/CC3000_Host_Programming_Guide" title="Special:Browse/CC3000 Host Programming Guide">Browse properties</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 19 May 2013, at 14:12.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 24,734 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights" title="Texas Instruments Embedded Processors Wiki:Copyrights">Creative Commons Attribution-Share Alike 3.0 license</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Privacy_policy" title="Texas Instruments Embedded Processors Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:About" title="Texas Instruments Embedded Processors Wiki:About">About Texas Instruments Embedded Processors Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:General_disclaimer" title="Texas Instruments Embedded Processors Wiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="./CC3000 Host Programming Guide_files/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki"></a></li>
+												<li id="footer-icon-copyright"><a href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img src="./CC3000 Host Programming Guide_files/88x31.png" alt="Creative Commons Attribution-Share Alike 3.0 license" width="88" height="31"></a></li>
+							</ul>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3008403-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		<!-- Served in 1.484 secs. -->			
+
+</body></html>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2220333199</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\Source\Patch Programmer\board.h</file>
+      <file>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer_FW_Patch.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer_FW_Patch.s43</file>
+      <file>$PROJ_DIR$\Debug\Exe\PatchFlasher.ulp</file>
+      <file>$PROJ_DIR$\Debug\List\board.s43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\CC3000_Spi.r43</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\netapp.c</file>
+      <file>$PROJ_DIR$\Debug\Exe\CC3000 Host Driver.r43</file>
+      <file>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchFlasher.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer.lst</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer_DR_Patch.s43</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\board.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430fr5739.h</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\hci.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer_DR_Patch.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\socket.h</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer_DR_Patch.lst</file>
+      <file>$PROJ_DIR$\..\Source\Patch Programmer\board.c</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\nvmem.h</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer_DR_Patch.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\netapp.h</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer.s43</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.h</file>
+      <file>$PROJ_DIR$\..\Source\inc\spi.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\PatchFlasher.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\board.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\PatchFlasher.map</file>
+      <file>$PROJ_DIR$\vee_lnk430fr5739.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer.r43</file>
+      <file>$PROJ_DIR$\Debug\List\board.lst</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\cc3000_common.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\wlan.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\errno.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CC3000HostDriver\evnt_handler.h</file>
+      <file>$TOOLKIT_DIR$\config\multiplier32_loc2.xcl</file>
+      <file>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer_DR_Patch.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\List\PatchProgrammer_FW_Patch.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer_FW_Patch.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\PatchProgrammer_FW_Patch.r43</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer_FW_Patch.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 5 54 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 36 17 43</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 39 41</file>
+        </tool>
+        <tool>
+          <name>ULP430</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Patch Programmer\board.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 7 44 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 28 21 31 4 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 21 31 4 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\PatchFlasher.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 42 51 11 9 56 20 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Patch Programmer\PatchProgrammer_DR_Patch.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 18 25 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 45 46 13 33 0 37 29 32 3 16 48 53 50 22 24 27 35 38 8 34 14 1 28 21 31 4</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

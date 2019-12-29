@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration -->
+<html lang="en" dir="ltr"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CC3000 First Time Configuration - Texas Instruments Embedded Processors Wiki</title>
+
+<meta name="generator" content="MediaWiki 1.16.0">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/extensions/BreadCrumbs/BreadCrumbs.css">
+<link rel="shortcut icon" href="http://processors.wiki.ti.com/images/ti32.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://processors.wiki.ti.com/opensearch_desc.php" title="Texas Instruments Embedded Processors Wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://processors.wiki.ti.com/index.php?title=CC3000_First_Time_Configuration&action=creativecommons" rel="meta">
+<link rel="copyright" href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="Texas Instruments Embedded Processors Wiki Atom feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="alternate" type="application/rss+xml" title="Texas Instruments Embedded Processors Wiki RSS feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=rss">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/vector/main-ltr.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/shared.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/commonPrint.css?270" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Common.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Print.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Vector.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=-&action=raw&maxage=18000&gen=css">
+<script type="text/javascript" async="" src="./CC3000 First Time Configuration_files/ga.js"></script><script>
+var skin="vector",
+stylepath="/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://processors.wiki.ti.com",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="CC3000_First_Time_Configuration",
+wgTitle="CC3000 First Time Configuration",
+wgAction="view",
+wgArticleId=13118,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=135773,
+wgVersion="1.16.0",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Texas Instruments Embedded Processors Wiki", "5": "Texas Instruments Embedded Processors Wiki talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "20": "Staging", "21": "Staging talk", "22": "C6000 EABI", "23": "C6000 EABI talk", "102": "Property", "103": "Property talk", "104": "Type", "105": "Type talk", "106": "Form", "107": "Form talk", "108": "Concept", "109": "Concept talk", "170": "Filter", "171": "Filter talk", "274": "Widget", "275": "Widget talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "texas_instruments_embedded_processors_wiki": 4, "texas_instruments_embedded_processors_wiki_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "staging": 20, "staging_talk": 21, "c6000_eabi": 22, "c6000_eabi_talk": 23, "property": 102, "property_talk": 103, "type": 104, "type_talk": 105, "form": 106, "form_talk": 107, "concept": 108, "concept_talk": 109, "filter": 170, "filter_talk": 171, "widget": 274, "widget_talk": 275, "image": 6, "image_talk": 7},
+wgSiteName="Texas Instruments Embedded Processors Wiki",
+wgCategories=["Wi-Fi", "CC3000", "Wireless Connectivity"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgRestrictionRead=[],
+wgFCKEditorDir="extensions/FCKeditor/fckeditor/",
+wgFCKEditorExtDir="extensions/FCKeditor",
+wgFCKEditorToolbarSet="Wiki",
+wgFCKEditorHeight="0",
+sfgAutocompleteOnAllChars=false,
+sfgScriptPath="/extensions/SemanticForms",
+sfgAutocompleteValues=[],
+sfgShowOnSelect=[],
+sfgFieldProperties=[],
+sfgDependentFields=[],
+sfgFormErrorsHeader="There were errors with your form input; see below.",
+sfgBlankErrorStr="cannot be blank",
+sfgBadURLErrorStr="must have the correct URL format, starting with \"http\"",
+sfgBadEmailErrorStr="must have a valid email address format",
+sfgBadNumberErrorStr="must be a valid number",
+sfgBadDateErrorStr="must be a valid date",
+sfgAnonEditWarning="Warning: You are not logged in. Your IP address will be recorded in this page\'s edit history.",
+sfgSaveAndContinueSummary="Saved using \"Save and continue\" button in form";
+</script><script src="./CC3000 First Time Configuration_files/wikibits.js"></script>
+<script src="./CC3000 First Time Configuration_files/jquery.min.js"></script>
+<script>var ltDebugMessages = false;</script>
+<script>
+var wgLTEMessages = {"livetranslate-button-translate":"Translate","livetranslate-button-translating":"Translating...","livetranslate-dictionary-error":"Could not obtain the live translate dictionary. No words will be treated as special during the translation process."};
+</script>
+<script>var ltMsAppId = "ECE119B5F43AE1DC3FCA6A86CB13B19F8BFF7E33";</script>
+<script src="./CC3000 First Time Configuration_files/ajax.js"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.htc")}</style><![endif]-->
+<script src="./CC3000 First Time Configuration_files/index.php"></script><link rel="stylesheet" type="text/css" href="./CC3000 First Time Configuration_files/index(1).php">
+
+<script src="./CC3000 First Time Configuration_files/ext.livetranslate.js"></script><script src="./CC3000 First Time Configuration_files/ext.lt.ms.js"></script>		<link rel="alternate" type="application/rdf+xml" title="CC3000 First Time Configuration" href="http://processors.wiki.ti.com/index.php?title=Special:ExportRDF/CC3000_First_Time_Configuration&xmlmime=rdf">
+<script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; window.addEventListener('waxSetArr', function(evt) {_arrInputs=evt.detail;}); return { getElement: function (i) { return _arrInputs[i]; } } }(); function waxGetElement(i) { return WAX.getElement(i); }</script></head>
+<body class="mediawiki ltr ns-0 ns-subject page-CC3000_First_Time_Configuration skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">CC3000 First Time Configuration</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<h3 id="siteSub">From Texas Instruments Embedded Processors Wiki</h3>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#mw-head">navigation</a>,
+					<a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="livetranslatediv" style="display:inline; float:right" class="notranslate" sourcelang="en">Translate this page to&nbsp;<select id="livetranslatelang"><option value="cs">cs - Česky</option>
+<option value="de">de - Deutsch</option>
+<option value="es">es - Español</option>
+<option value="fi">fi - Suomi</option>
+<option value="fr">fr - Français</option>
+<option value="hu">hu - Magyar</option>
+<option value="it">it - Italiano</option>
+<option value="ja">ja - 日本語</option>
+<option value="ko">ko - 한국어</option>
+<option value="pl">pl - Polski</option>
+<option value="pt">pt - Português</option>
+<option value="ru">ru - Русский</option>
+<option value="sv">sv - Svenska</option>
+<option value="vi">vi - Tiếng Việt</option>
+<option value="zh-cn">zh-CN - ‪中文(中国大陆)‬</option></select>&nbsp;<button id="livetranslatebutton">Translate</button>&nbsp;<button id="ltrevertbutton" style="display:none">Show original</button></div><div id="BreadCrumbsTrail"><a href="./CC3000 First Time Configuration_files/CC3000 First Time Configuration.htm" title="CC3000 First Time Configuration">CC3000 First Time Configuration</a></div><div class="hf-nsheader"><p><script language="Javascript">
+var tiContentGroup;
+tiContentGroup = "/DSP/wiki/Ext";
+var tiPageName;
+tiPageName = 'CC3000_First_Time_Configuration';
+</script>
+</p>
+<div style="float: right; padding: 0px 5px 5px 0px">
+<table style="border-collapse: separate; border-spacing: 0; border-width: 2px; border-style: hidden; border-color: gray; background-color: rgb(255, 255, 250);">
+<tbody><tr>
+<td> <!-- Google CSE Search Box Begins  -->
+<p></p><form action="http://processors.wiki.ti.com/index.php" id="searchbox_012993352299989377144:kjaa1vfng0a"><input type="hidden" name="title" value="GoogleSearch"><input type="hidden" name="cx" value="012993352299989377144:kjaa1vfng0a"><input type="hidden" name="cof" value="FORID:11"><input type="text" name="q" size="25" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;"><input type="submit" name="sa" value="Search"><input name="siteurl" type="hidden" value="processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form><script type="text/javascript" src="./CC3000 First Time Configuration_files/brand"></script>
+<!-- Google CSE Search Box Ends --><!-- Google Search Result Snippet Begins -->
+<p></p>
+<div id="results_012993352299989377144:kjaa1vfng0a"></div><script type="text/javascript">var googleSearchIframeName = "results_012993352299989377144:kjaa1vfng0a";var googleSearchFormName = "searchbox_012993352299989377144:kjaa1vfng0a";var googleSearchFrameWidth = 600;var googleSearchFrameborder = 0;var googleSearchDomain = "www.google.com";var googleSearchPath = "/cse";</script><script type="text/javascript" src="./CC3000 First Time Configuration_files/show_afs_search.js"></script>
+<p><!-- Google Search Result Snippet Ends -->
+</p>
+</td></tr></tbody></table>
+</div>
+</div><div class="hf-header"></div><p><br>
+<br>The purpose of this wiki is to provide background on the “First Time Configuration” process for CC3000 based devices 
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a id="togglelink" class="internal" href="javascript:toggleToc()">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Benefits"><span class="tocnumber">1.1</span> <span class="toctext">Benefits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#The_Simple_Configuration_Process"><span class="tocnumber">2</span> <span class="toctext">The Simple Configuration Process</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Starting_the_First_Time_Configuration_Process"><span class="tocnumber">2.1</span> <span class="toctext">Starting the First Time Configuration Process</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#First_Time_Config_Probe_and_Beacon_Definition"><span class="tocnumber">2.2</span> <span class="toctext">First Time Config Probe and Beacon Definition</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Example-_Associating_CC3000_to_AP_with_No_Security"><span class="tocnumber">2.2.1</span> <span class="toctext">Example- Associating CC3000 to AP with No Security</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Example-_Associating_CC3000_to_AP_with_WEP_Security"><span class="tocnumber">2.2.2</span> <span class="toctext">Example- Associating CC3000 to AP with WEP Security</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Example-_Associating_CC3000_to_AP_with_WPA_Security"><span class="tocnumber">2.2.3</span> <span class="toctext">Example- Associating CC3000 to AP with WPA Security</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Example-_Associating_CC3000_to_AP_with_WPA2_Security"><span class="tocnumber">2.2.4</span> <span class="toctext">Example- Associating CC3000 to AP with WPA2 Security</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Examples_using_Laptops.2FSmart_Phones"><span class="tocnumber">3</span> <span class="toctext">Examples using Laptops/Smart Phones</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Using_a_Smart_Phone_for_First_Time_Configuration"><span class="tocnumber">3.1</span> <span class="toctext">Using a Smart Phone for First Time Configuration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#iPhone"><span class="tocnumber">3.1.1</span> <span class="toctext">iPhone</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Blackberry"><span class="tocnumber">3.1.2</span> <span class="toctext">Blackberry</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Android"><span class="tocnumber">3.1.3</span> <span class="toctext">Android</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Using_a_Laptop"><span class="tocnumber">3.2</span> <span class="toctext">Using a Laptop</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Configuring_Laptop_to_broadcast_Probe_Request"><span class="tocnumber">3.2.1</span> <span class="toctext">Configuring Laptop to broadcast Probe Request</span></a>
+<ul>
+<li class="toclevel-4 tocsection-17"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Disconnecting_from_all_networks"><span class="tocnumber">3.2.1.1</span> <span class="toctext">Disconnecting from all networks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-18"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Win_XP"><span class="tocnumber">3.2.2</span> <span class="toctext">Win XP</span></a>
+<ul>
+<li class="toclevel-4 tocsection-19"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Add_Network"><span class="tocnumber">3.2.2.1</span> <span class="toctext">Add Network</span></a></li>
+<li class="toclevel-4 tocsection-20"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Removing_networks_to_which_Windows_Might_Connect"><span class="tocnumber">3.2.2.2</span> <span class="toctext">Removing networks to which Windows Might Connect</span></a></li>
+<li class="toclevel-4 tocsection-21"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Trigger_Probe_Transmission_on_Laptop"><span class="tocnumber">3.2.2.3</span> <span class="toctext">Trigger Probe Transmission on Laptop</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-22"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Win_7"><span class="tocnumber">3.2.3</span> <span class="toctext">Win 7</span></a>
+<ul>
+<li class="toclevel-4 tocsection-23"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Add_Network.C2.A0.C2.A0"><span class="tocnumber">3.2.3.1</span> <span class="toctext">Add Network&nbsp;&nbsp;</span></a></li>
+<li class="toclevel-4 tocsection-24"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Disable_networks_to_which_Windows_Might_Connect"><span class="tocnumber">3.2.3.2</span> <span class="toctext">Disable networks to which Windows Might Connect</span></a></li>
+<li class="toclevel-4 tocsection-25"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Trigger_Probe_Transmission_on_Laptop_2"><span class="tocnumber">3.2.3.3</span> <span class="toctext">Trigger Probe Transmission on Laptop</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Using_Beacons"><span class="tocnumber">4</span> <span class="toctext">Using Beacons</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Related_Documents"><span class="tocnumber">5</span> <span class="toctext">Related Documents</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#Site_Map"><span class="tocnumber">6</span> <span class="toctext">Site Map</span></a></li>
+</ul>
+</td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<h1> <span class="mw-headline" id="Overview"> Overview  </span></h1>
+<p>Associating a WiFi enabled device with an&nbsp;Access Point is usually a simple process. The process usually relies on a user selecting the AP to which the device should connect. This simple scenario is invariably complicated by the limited Input and Output present in devices being increasingly enabled with WiFi. These devices are expected to be embedded in a wide variety of applications where displays and a keyboards are not likely to be present. Although it is possible to fix the parameters used for association, such as the AP's name, this introduces several other issues that are not acceptable in many applications.<br>
+</p><p>First Time Configuration is a unique CC3000 feature that leverages the standard mechanisms present in WiFi to configure a CC3000's association information on the fly, regardless of whether any I/O is available. In First Time Config, a WiFi enabled device such as a mobile phone or a laptop is used to send the association information to the CC3000. The network configuration information is transported in an Ad-Hoc Beacon or Probe Request packet that is received by&nbsp; CC3000 device in a first-time configuration state. <br><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_process.PNG" class="image" title="Cc3000 ftc process.PNG"><img alt="Cc3000 ftc process.PNG" src="./CC3000 First Time Configuration_files/Cc3000_ftc_process.PNG" width="764" height="493"></a></div></div><br>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="Benefits"> Benefits<br> </span></h2>
+<ul><li>Uses WiFi’s standard mechanisms – no special software support or devices required <br>
+</li><li>Does not depend on the Host Microcontroller's I/O capabilities, thereby usable by deeply embedded applications<br>
+</li><li>Can be used to associate multiple devices together to same AP at the same time<br><br>
+</li></ul>
+<p><br>
+</p>
+<h1> <span class="mw-headline" id="The_Simple_Configuration_Process"> The Simple Configuration Process<br> </span></h1>
+<p>As previously shown, the simple configuration process enables associating a CC3000 device with an Access point. This is done using the following process:<br>
+</p>
+<ul><li>The CC3000 is placed in Simple Configuration mode and begins looking for beacons or probes<br>
+</li><li>An external device is configured to send probes(universally supported) or beacons(supported by Access Points and soft Access Point devices)<br>
+</li><li>The CC3000 receives the probe or beacon and interprets it.<br>
+</li></ul>
+<p><br>
+</p><p>After the&nbsp;CC3000 successfully inteprets the probe or beacon, it creates a profile in the EEPROM which will be used to connect to the access point. From this point, the CC3000 is enabled to automatically manage the connection with the AP and it is no longer necessary to perform first time config or request that the CC3000 connect, unless the details of the connection have changed (such as passphrase, security type or AP name).<br>
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="Starting_the_First_Time_Configuration_Process"> Starting the First Time Configuration Process<br> </span></h2>
+<p>In order to perform the first time config procedure, the CC3000 must enter that mode. In this section it is assumed that the first-time configuration process can be triggered externally on the CC3000 device. For example, a user may press a button to initiate the process. The configuration process is initiated by an API which commands the CC3000 to enter the First Time Configuration mode. When the configuration process is triggered, the CC3000 device performs the following: 
+</p>
+<ul><li>Enters the Factory Reset state and scans for the SSID of beacons and probes starting with the 3-character vendor prefix configured by the device vendor in EEPROM or the wlan_smart_config_set_prefix API call. This prefix can be changed in the application. Both the prefix sent by the Phone or other WiFi device, as well as the prefix used by the&nbsp;CC3000 must match.<br>
+</li><li>When a Probe or a Beacon with the vendor prefix is found and contains the association information, the CC3000 generates a SIMPLE_CONFIG_DONE asynchronous event and uses the first-time configuration structure received in the SSID to generate the profile describing the target AP. The following figure shows this process as seen by the Host MCU and CC3000 device itself:
+</li></ul>
+<br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:692px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_host_mcu.PNG" class="image"><img alt="Cc3000 ftc host mcu.PNG" src="./CC3000 First Time Configuration_files/Cc3000_ftc_host_mcu.PNG" width="690" height="332" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> <br>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="First_Time_Config_Probe_and_Beacon_Definition"> First Time Config Probe and Beacon Definition  </span></h2>
+<p>A device such as a mobile phone or tablet used for performing a first time Configuration needs to be configured to connect to an AP with a specially crafted SSID. This SSID includes the name of the SSID to which we want the CC3000 to connect, as well as information about security options such as security type and key.<br>
+</p><p>An ad hoc beacon/probe request conveys AP information and is broadcast over the air. The CC3000 device is configured to detect a packet (beacon or probe) with a specific prefix and, on detection, to extract the information required to connect to the target AP. Figure 2 shows a First-time configuration packet structure: <br>
+</p>
+<br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:724px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ssid_fields.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Cc3000_ssid_fields.PNG" width="722" height="253" class="thumbimage"></a>  <div class="thumbcaption">Cc3000 ssid fields.PNG</div></div></div></div> <br>
+<p><br>
+</p>
+<table class="FCK__ShowTableBorders" align="center">
+
+<tbody><tr style="background: #4488cc; color: #ffffff">
+<th> Field Name
+</th><th> Field Length <br>(Bytes or Characters)
+</th><th>
+<p>Field Description 
+</p><p><br>
+</p>
+</th></tr>
+<tr style="background: #eeeeee">
+<td> Vendor Prefix
+</td><td> 3 bytes
+</td><td> Identifies the CC3000 device vendor. Programmed into CC3000 EEPROM. Published by Device vendor in the <i>Quick Setup Guide</i>
+</td></tr>
+<tr>
+<td> SSID LEN
+</td><td> 1 byte
+</td><td> SSID Length in Hex format. Values from 1 (1 Character)&nbsp; to F (15 Characters)<br>
+</td></tr>
+<tr style="background: #eeeeee">
+<td> SSID
+</td><td> <br>
+</td><td> A string of length SSID_LEN which incorporates the SSID of the destination AP.<br>
+</td></tr>
+<tr>
+<td> Security Type
+</td><td> 1 byte<br>
+</td><td> Connection Security type: None (0), WEP (1), WPA (2), WPA2 (3)
+</td></tr>
+<tr style="background: #eeeeee">
+<td> Security Key
+</td><td> <br>
+</td><td> Security Key as ASCII characters in the format defined by Security Type
+</td></tr></tbody></table>
+<p><br>
+</p><p>The combination of SSID and&nbsp;Security Key (if required) cannot exceed 27 characters.<br>
+</p><p><br>
+</p>
+<table style="width: 1050px; height: 60px" cellspacing="1" cellpadding="1" width="1363" border="1">
+
+<tbody><tr>
+<td> <a href="http://processors.wiki.ti.com/index.php/File:Exclamation-icon.jpg" class="image" title="Exclamation-icon.jpg"><img alt="Exclamation-icon.jpg" src="./CC3000 First Time Configuration_files/34px-Exclamation-icon.jpg" width="34" height="35"></a>&nbsp;
+<p>In the following sections, the prefix "TTT" is used. Please note that this is the default prefix in some Demo Applications. In other Demo applications, the prefix "PDE" is used.
+</p>
+</td></tr></tbody></table>
+<p><br>The prefix is an option that is configured in the application code using a Host Driver API.&nbsp;The CC3000 uses this prefix when searching for the First Time Configuration packet.&nbsp;The prefix 
+</p><p>used when sending probes, as well as the prefix configured in the application that is used by the CC3000, must match for the First Time Configuration procedure to work. 
+</p>
+<h3> <span class="mw-headline" id="Example-_Associating_CC3000_to_AP_with_No_Security"> Example- Associating CC3000 to AP with No Security<br> </span></h3>
+<p>An example SSID used for first-time configuration is: 
+</p>
+<pre> TTT5Demo10
+</pre>
+<p>The SSID will be interpreted by the CC3000 device as follows: 
+</p>
+<ul><li>TTT: Prefix. The CC3000 device will looks for a beacon starting with TTT indicating Texas Instruments 
+</li><li>5: SSID length of 0x05 characters<br>
+</li><li>Demo1: Name of the SSID to which we want the CC3000 to connect 
+</li><li>0: Security type&nbsp; - No Security<br>
+</li><li>No security key is needed.
+</li></ul>
+<p><br>
+</p><p>If "TTT5Demo10" is used as the AP to which we want to connect, and the CC3000 is in First time config mode and receives the probe requests, it will attempt to connect to the AP called Demo1.<br>
+</p><p><br>
+</p>
+<h3> <span class="mw-headline" id="Example-_Associating_CC3000_to_AP_with_WEP_Security"> Example- Associating CC3000 to AP with WEP Security<br> </span></h3>
+<p>An example SSID used for first-time configuration is: 
+</p>
+<pre> TTT5Demo111234567890</pre>
+<p>The SSID will be interpreted by the CC3000 device as follows: 
+</p>
+<ul><li>TTT: Prefix. The CC3000 device will looks for a beacon starting with TTT indicating Texas Instruments 
+</li><li>5: SSID length of 0x05 characters<br>
+</li><li>Demo1: Name of the SSID to which we want the CC3000 to connect 
+</li><li>&nbsp;1: Security type (WEP) 
+</li><li>1234567890- The WEP security key (no white spaces are allowed following the Security type field).
+</li></ul>
+<p><br>
+</p><p>If "TTT5Demo111234567890" is used as the AP to which we want to connect, and the CC3000 is in First time config mode and receives the probe requests, it will attempt to connect to the AP called Demo1 using WEP and 1234567890 as the passphrase. 
+</p><p>&nbsp;<br>
+</p>
+<h3> <span class="mw-headline" id="Example-_Associating_CC3000_to_AP_with_WPA_Security"> Example- Associating CC3000 to AP with WPA Security<br> </span></h3>
+<p>An example SSID used for first-time configuration is: 
+</p>
+<pre> TTT5Demo12testtest
+</pre>
+<p>The SSID will be interpreted by the CC3000 device as follows: 
+</p>
+<ul><li>TTT: Prefix. The CC3000 device will looks for a beacon starting with TTT indicating Texas Instruments 
+</li><li>5: SSID length of 0x05 characters<br>
+</li><li>Demo1: Name of the SSID to which we want the CC3000 to connect 
+</li><li>2: Security type (WPA) 
+</li><li>testtest - The WPA security key (no white spaces are allowed following the Security type field).
+</li></ul>
+<p><br>
+</p><p>If "TTT5Demo12testtest" is used as the AP to which we want to connect, and the CC3000 is in First time config mode and receives the probe requests, it will attempt to connect to the AP called Demo1 using WPA and testtest as the passphrase.<br><br>
+</p>
+<h3> <span class="mw-headline" id="Example-_Associating_CC3000_to_AP_with_WPA2_Security"> Example- Associating CC3000 to AP with WPA2 Security<br> </span></h3>
+<p>An example SSID used for first-time configuration is: 
+</p>
+<pre> TTT5Demo13testtest
+</pre>
+<p>The SSID will be interpreted by the CC3000 device as follows: 
+</p>
+<ul><li>TTT: Prefix. The CC3000 device will looks for a beacon starting with TTT indicating Texas Instruments 
+</li><li>5: SSID length of 0x05 characters<br>
+</li><li>Demo1: Name of the SSID to which we want the CC3000 to connect 
+</li><li>3: Security type (WPA2) 
+</li><li>testtest - The WPA2 security key (no white spaces are allowed following the Security type field).
+</li></ul>
+<p><br>
+</p><p>If "TTT5Demo12testtest" is used as the AP to which we want to connect, and the CC3000 is in First time config mode and receives the probe requests, it will attempt to connect to the AP called Demo1 using WPA and testtest as the passphrase. 
+</p>
+<h1> <span class="mw-headline" id="Examples_using_Laptops.2FSmart_Phones"> Examples using Laptops/Smart Phones  </span></h1>
+<p>The First Time config process is supported by all WiFi enabled devices. Some of these devices include: 
+</p>
+<ul><li>WiFi Enabled Laptops<br>
+</li><li>WiFi enabled Mobile devices such as iPhone, Blackberry and Android<br>
+</li></ul>
+<p><br>
+</p><p>Please note that the CC3000 is in First Time Configuration mode before sending the probe requests using any of the methods outlined in the next sections or the process will not complete successfully. 
+</p><p><br>
+</p><p>Probe requests in&nbsp;WiFi enabled devices are usually sent every 5-6 seconds, with each device acting differently. Because the&nbsp;CC3000 cannot assume the channel on which<br>these probe requests are sent, it must scan all channels and, due to relative few transmissions of probe requests, might miss them. Therefore, it is possible for the process of<br>sending probe requests (as shown in the sections below) to be repeated until the CC3000 successfully performs the FIrst Time Configuration 
+</p>
+<h2> <span class="mw-headline" id="Using_a_Smart_Phone_for_First_Time_Configuration"> Using a Smart Phone for First Time Configuration  </span></h2>
+<p>The following sections show how to generate probe requests using various mobile devices. Please ensure that the CC3000 is in first-time configuration mode<br>before you begin. 
+</p>
+<h3> <span class="mw-headline" id="iPhone"> iPhone  </span></h3>
+<p><br>
+</p>
+<table style="width: 778px; height: 490px" cellspacing="1" cellpadding="0" align="center" border="1">
+
+<tbody><tr>
+<td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:303px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_iphone2.PNG" class="image"><img alt="Cc3000 ftc iphone2.PNG" src="./CC3000 First Time Configuration_files/Cc3000_ftc_iphone2.PNG" width="301" height="449" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> 
+<div style="text-align: center">Enter Settings -&gt;&nbsp; Wi-Fi Networks and select Other..</div>.<br><br><br><br>
+</td><td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:303px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_iphone3.PNG" class="image"><img alt="Cc3000 ftc iphone3.PNG" src="./CC3000 First Time Configuration_files/Cc3000_ftc_iphone3.PNG" width="301" height="449" class="thumbimage"></a>  <div class="thumbcaption"></div></div></div></div> 
+<div style="text-align: center">Enter the Simple Config information in the Name field,<br>ensuring that Security is set to none (this field is not used<br>even when security is enabled in the AP).<br>Press <b>Join </b>to initiate the Simple Config Process.</div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table cellspacing="1" cellpadding="1" width="800" border="1">
+
+<tbody><tr>
+<td> <a href="http://processors.wiki.ti.com/index.php/File:Exclamation-icon.jpg" class="image" title="Exclamation-icon.jpg"><img alt="Exclamation-icon.jpg" src="./CC3000 First Time Configuration_files/34px-Exclamation-icon.jpg" width="34" height="35"></a>&nbsp;<b>It might be necessary to perform the steps several times until the CC3000 indicates it has finished Simple Config</b>
+</td></tr></tbody></table>
+<p>&nbsp;<br>
+</p>
+<h3> <span class="mw-headline" id="Blackberry"> Blackberry  </span></h3>
+<p>The following pictures depict using a Blackberry device to connect a CC3000 to an AP with the name "DemoAP": <br><br>
+</p>
+<table style="width: 778px; height: 640px" cellspacing="1" cellpadding="0" align="center" border="1">
+
+<tbody><tr>
+<td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry1.PNG" class="image" title="Cc3000 ftc blackberry1.PNG"><img alt="Cc3000 ftc blackberry1.PNG" src="./CC3000 First Time Configuration_files/330px-Cc3000_ftc_blackberry1.PNG" width="330" height="250" class="thumbborder"></a></div></div>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry2.PNG" class="image" title="Cc3000 ftc blackberry2.PNG"><img alt="Cc3000 ftc blackberry2.PNG" src="./CC3000 First Time Configuration_files/329px-Cc3000_ftc_blackberry2.PNG" width="329" height="250" class="thumbborder"></a></div></div>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry3.PNG" class="image" title="Cc3000 ftc blackberry3.PNG"><img alt="Cc3000 ftc blackberry3.PNG" src="./CC3000 First Time Configuration_files/329px-Cc3000_ftc_blackberry3.PNG" width="329" height="250" class="thumbborder"></a></div></div>
+</td></tr>
+<tr>
+<td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry4.PNG" class="image" title="Cc3000 ftc blackberry4.PNG"><img alt="Cc3000 ftc blackberry4.PNG" src="./CC3000 First Time Configuration_files/330px-Cc3000_ftc_blackberry4.PNG" width="330" height="250" class="thumbborder"></a></div></div>Enter the Simple Config information in the SSID field and select next<br>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry5.PNG" class="image" title="Cc3000 ftc blackberry5.PNG"><img alt="Cc3000 ftc blackberry5.PNG" src="./CC3000 First Time Configuration_files/329px-Cc3000_ftc_blackberry5.PNG" width="329" height="250" class="thumbborder"></a></div></div>Select Save and Connect to begin the Simple Configuration process<br>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry6.PNG" class="image" title="Cc3000 ftc blackberry6.PNG"><img alt="Cc3000 ftc blackberry6.PNG" src="./CC3000 First Time Configuration_files/329px-Cc3000_ftc_blackberry6.PNG" width="329" height="250" class="thumbborder"></a></div></div> The Blackberry is sending probe Requests to the CC3000<br>
+</td></tr>
+<tr>
+<td>
+<div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_ftc_blackberry7.PNG" class="image" title="Cc3000 ftc blackberry7.PNG"><img alt="Cc3000 ftc blackberry7.PNG" src="./CC3000 First Time Configuration_files/329px-Cc3000_ftc_blackberry7.PNG" width="329" height="250" class="thumbborder"></a></div></div> 
+<p>The Blackberry will alert that it has failed to connect to the<br>network, which is correct since the network name does not exist. However it has sent the probe requests. This step will need to be repeated until the CC3000 successfully receives the probe request<br>
+</p>
+</td><td> <br>
+</td><td> <br>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h3> <span class="mw-headline" id="Android"> Android  </span></h3>
+<p>The following pictures depict using an Android device to connect a CC3000 to an AP with the name "DemoAP": <br><br>
+</p>
+<table style="width: 778px; height: 640px" cellspacing="1" cellpadding="0" align="center" border="1">
+
+<tbody><tr>
+<td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_1.png" class="image" title="Cc3000 android ftc 1.png"><img alt="Cc3000 android ftc 1.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_1.png" width="320" height="569" class="thumbborder"></a></div></div><div style="text-align: center">Enter <b>Settings</b></div><b><br></b>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_2.png" class="image" title="Cc3000 android ftc 2.png"><img alt="Cc3000 android ftc 2.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_2.png" width="320" height="569" class="thumbborder"></a></div></div> <div style="text-align: center">Select <b>Wireless Networks</b></div><br>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_3.png" class="image" title="Cc3000 android ftc 3.png"><img alt="Cc3000 android ftc 3.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_3.png" width="320" height="569" class="thumbborder"></a></div></div><div style="text-align: center">Select <b>Wi-Fi Settings</b></div><br>
+</td></tr>
+<tr>
+<td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_4.png" class="image" title="Cc3000 android ftc 4.png"><img alt="Cc3000 android ftc 4.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_4.png" width="320" height="569" class="thumbborder"></a></div></div><div style="text-align: center">Scroll to the bottom of the menu</div>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_5.png" class="image" title="Cc3000 android ftc 5.png"><img alt="Cc3000 android ftc 5.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_5.png" width="320" height="569" class="thumbborder"></a></div></div><div style="text-align: center">Enter <b>Add Wi-Fi Network<br></b></div>
+</td><td> <div class="center"><div class="floatnone"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_android_ftc_6.png" class="image" title="Cc3000 android ftc 6.png"><img alt="Cc3000 android ftc 6.png" src="./CC3000 First Time Configuration_files/320px-Cc3000_android_ftc_6.png" width="320" height="569" class="thumbborder"></a></div></div> <div style="text-align: center">Enter the Simple Configuration information in the Network SSID field and select <b>Save</b></div>
+</td><td> <br>
+</td><td> <br>
+</td></tr></tbody></table>
+<p>The CC3x Config Tool is an Android application that automates the First Time Config process. This <a href="http://processors.wiki.ti.com/index.php/CC3x_Config_Tool_Getting_Started" title="CC3x Config Tool Getting Started">link here</a> describes how to operate the application. 
+</p>
+<h2> <span class="mw-headline" id="Using_a_Laptop"> Using a Laptop<br> </span></h2>
+<h4> <span class="mw-headline" id="Configuring_Laptop_to_broadcast_Probe_Request"> Configuring Laptop to broadcast Probe Request  </span></h4>
+<p>This section describes an example of how to configure a laptop to broadcast a probe request with the defined structure. 
+</p>
+<h5> <span class="mw-headline" id="Disconnecting_from_all_networks"> Disconnecting from all networks  </span></h5>
+<p>Before actually performing the First Time Configuration, the wireless interface needs to be disconnected from any<br>network. This can be done by pressing on the wireless configuration in the taskbar and double clicking on the currently<br>connected network's name. Windows will disconnect from that network and place it in manual mode. This needs to be performed for<br>each network that the computer is connected or will connect until the wireless interface is not connected to any of them. 
+</p><p><br>
+</p>
+<h4> <span class="mw-headline" id="Win_XP"> <u>Win XP</u> </span></h4>
+<h5> <span class="mw-headline" id="Add_Network"> Add Network  </span></h5>
+From the Preferred networks area of the Wireless Network Connection 2 Properties dialog box, click Add (see Figure 19). <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:375px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_pc_probesimpleconfig1.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Cc3000_pc_probesimpleconfig1.PNG" width="373" height="451" class="thumbimage"></a>  <div class="thumbcaption">Cc3000 pc probesimpleconfig1.PNG</div></div></div></div> <br>
+<p>The Windows network properties dialog box appears with the Association tab displayed (see Figure 20): 
+</p>
+<ul><li>In the Network name (SSID) field, type the SSID as required by the first-time configuration. 
+</li><li>Click to check the box to connect even if this network is not broadcasting. 
+</li><li>In the Network Authentification field, select Open. 
+</li><li>In the Data Encryption field, select Disabled. 
+</li><li>Click OK.
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:378px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_pc_probesimpleconfig2.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Cc3000_pc_probesimpleconfig2.PNG" width="376" height="478" class="thumbimage"></a>  <div class="thumbcaption">Cc3000 pc probesimpleconfig2.PNG</div></div></div></div> <br>
+<br>A dialog box appears to notify you that security encyption is disabled for the network (see Figure 21). Click Continue Anyway. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:437px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_pc_probesimpleconfig3.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Cc3000_pc_probesimpleconfig3.PNG" width="435" height="485" class="thumbimage"></a>  <div class="thumbcaption">Cc3000 pc probesimpleconfig3.PNG</div></div></div></div> <br>
+<h5> <span class="mw-headline" id="Removing_networks_to_which_Windows_Might_Connect"> Removing networks to which Windows Might Connect<br> </span></h5>
+<p>It is important to remove any wireless networks to which we are currently connected or that we might connect to from the list. This is because Windows will automatically attempt to connect to them if it is able to see them instead of sending the probe request. For example, if your wireless interface is currently connected to a network called "Demo1"&nbsp;you will need to remove this network from the list. Please ensure you can later restore it.&nbsp; 
+</p>
+<h5> <span class="mw-headline" id="Trigger_Probe_Transmission_on_Laptop"> Trigger Probe Transmission on Laptop <br> </span></h5>
+<table cellspacing="1" cellpadding="1" width="800" border="1">
+
+<tbody><tr>
+<td> <a href="http://processors.wiki.ti.com/index.php/File:Exclamation-icon.jpg" class="image" title="Exclamation-icon.jpg"><img alt="Exclamation-icon.jpg" src="./CC3000 First Time Configuration_files/34px-Exclamation-icon.jpg" width="34" height="35"></a>&nbsp;<b>Ensure that the CC3000 device is in a first-time configuration before triggering the laptop to transmit a beacon</b>
+</td></tr></tbody></table>
+<br>Right-click the Wireless Network icon on the laptop to display the menu and click Repair (see Figure 22). <br><br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:313px;"><a href="http://processors.wiki.ti.com/index.php/File:Cc3000_pc_probesimpleconfig4.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Cc3000_pc_probesimpleconfig4.PNG" width="311" height="165" class="thumbimage"></a>  <div class="thumbcaption">Cc3000 pc probesimpleconfig4.PNG</div></div></div></div> <br>
+<p>The operation triggers the generation of a probe request which will be received by the CC3000
+</p>
+<h4> <span class="mw-headline" id="Win_7"> <br><u>Win 7</u>  </span></h4>
+<h5> <span class="mw-headline" id="Add_Network.C2.A0.C2.A0"> Add Network&nbsp;&nbsp;  </span></h5>
+Go to “Network and Sharing Center” and choose “Setup a Connection or Network”&nbsp;: <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:918px;"><a href="http://processors.wiki.ti.com/index.php/File:NetworkAndSharing.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/NetworkAndSharing.PNG" width="916" height="566" class="thumbimage"></a>  <div class="thumbcaption">NetworkAndSharing.PNG</div></div></div></div><br>
+<p>Choose “Manually connect to a wireless network”&nbsp;:<br>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:619px;"><a href="http://processors.wiki.ti.com/index.php/File:Manualconnect.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Manualconnect.PNG" width="617" height="448" class="thumbimage"></a>  <div class="thumbcaption">Manualconnect.PNG</div></div></div></div><br>
+Fill in the SSID information as required for FTC, and choose “No authentication (open)” as the “Security Type”: <br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:620px;"><a href="http://processors.wiki.ti.com/index.php/File:Details.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Details.PNG" width="618" height="440" class="thumbimage"></a>  <div class="thumbcaption">Details.PNG</div></div></div></div><br>
+<p>Return to “Network and Sharing Center” and choose “Manage Wireless Networks”. 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:904px;"><a href="http://processors.wiki.ti.com/index.php/File:Networks.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Networks.PNG" width="902" height="247" class="thumbimage"></a>  <div class="thumbcaption">Networks.PNG</div></div></div></div><br>
+<p>Choose the SSID that was added, press the right mouse button, then choose “Properties”.<br>
+</p><p>Check the “Connect even if the network is not broadcasting its name (SSID)” checkbox&nbsp;: 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:382px;"><a href="http://processors.wiki.ti.com/index.php/File:ConnectEven.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/ConnectEven.PNG" width="380" height="495" class="thumbimage"></a>  <div class="thumbcaption">ConnectEven.PNG</div></div></div></div><br>
+<h5> <span class="mw-headline" id="Disable_networks_to_which_Windows_Might_Connect"> Disable networks to which Windows Might Connect<br> </span></h5>
+<p>In “Manage wireless networks” please&nbsp; ensure that the new SSID is in the top of the list. It can be done by the help of 'Move Up' button.
+</p>
+<h5> <span class="mw-headline" id="Trigger_Probe_Transmission_on_Laptop_2"> Trigger Probe Transmission on Laptop<br> </span></h5>
+<p>Return to “Network and Sharing Center” and choose “Connect to a network”, then choose the SSID that was added by right clicking it and then choose 'connect'.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:269px;"><a href="http://processors.wiki.ti.com/index.php/File:Connect.PNG" class="image"><img alt="" src="./CC3000 First Time Configuration_files/Connect.PNG" width="267" height="377" class="thumbimage"></a>  <div class="thumbcaption">Connect.PNG</div></div></div></div><br>
+<h1> <span class="mw-headline" id="Using_Beacons"> Using Beacons<br> </span></h1>
+<p>Besides Probes, it is also possible to use beacons to perform a First Time Configuration. For information please see the <a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration_using_Beacons" class="external text" rel="nofollow" target="_blank">CC3000 First Time Configuration using Beacons Wiki</a><br>Because of the speed at which beacons are sent (100ms in most cases), they enable a faster First Time Configuration process. 
+</p>
+<h1> <span class="mw-headline" id="Related_Documents"> Related Documents  </span></h1>
+<ul><li>CC3000 Host Driver API document 
+</li><li>CC3000 Host Driver Overview
+</li></ul>
+<p><br><br>
+</p><p><br>
+</p>
+<h1> <span class="mw-headline" id="Site_Map"> Site Map  </span></h1>
+<ul><li><a href="http://processors.wiki.ti.com/index.php/CC3000_Wi-Fi_Site_Map" title="CC3000 Wi-Fi Site Map">CC3000 Wiki Site Map</a>
+</li></ul>
+<dl><dd><ul><li><a href="http://processors.wiki.ti.com/index.php/CC3000_Wi-Fi_for_MCU" title="CC3000 Wi-Fi for MCU" class="mw-redirect">CC3000 Main Page</a>
+</li></ul>
+</dd></dl>
+<p><br><br>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 155/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="hf-footer"></div><div class="hf-nsfooter"><table style="text-align:center; background:white; width:100%; text-align:left; height: 65px border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; border-width: 1px; border-style: solid;">
+<tbody><tr>
+<td width="305px"><a href="http://processors.wiki.ti.com/index.php/File:E2e.jpg" class="image"><img alt="E2e.jpg" src="./CC3000 First Time Configuration_files/E2e.jpg" width="305" height="63"></a>
+</td><td><i>For technical support please post your questions at <a href="http://e2e.ti.com/" class="external free" rel="nofollow" target="_blank">http://e2e.ti.com</a>. Please post only comments about the article <b>CC3000 First Time Configuration</b> here.</i>
+</td></tr></tbody></table>
+<table style="border-style:solid; border-width:1px; text-align:center; width:100%;">
+
+<tbody><tr style="font-size:150%;">
+<td rowspan="2"> <a href="http://processors.wiki.ti.com/index.php/File:Hyperlink_blue.png" class="image"><img alt="Hyperlink blue.png" src="./CC3000 First Time Configuration_files/96px-Hyperlink_blue.png" width="96" height="96"></a>
+</td><td><b>Links</b>
+</td></tr>
+<tr>
+<td>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/microcontroller/arm_stellaris/overview.page" class="external text" rel="nofollow" target="_blank">ARM Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/arm.page" class="external text" rel="nofollow" target="_blank">ARM Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/davinci/device.page" class="external text" rel="nofollow" target="_blank">Digital Media Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/home.page" class="external text" rel="nofollow" target="_blank">Digital Signal Processing</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/home.page" class="external text" rel="nofollow" target="_blank">Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c6000-multicore/device.page" class="external text" rel="nofollow" target="_blank">Multi Core Processor</a>
+</td></tr></tbody></table>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c5000/device.page" class="external text" rel="nofollow" target="_blank">Ultra Low Power DSP</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/8-bit_value_line.page" class="external text" rel="nofollow" target="_blank">8 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/overview.page" class="external text" rel="nofollow" target="_blank">16 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/32-bit_c2000/overview.page" class="external text" rel="nofollow" target="_blank">32 bit Microcontroller MCU</a>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p><!-- HitBox Sub accounts Code START -->
+<script language="JavaScript" src="./CC3000 First Time Configuration_files/metrics-min.js" type="text/javascript"></script>
+<!-- HitBox Sub accounts Code END -->
+</p></div><div class="printfooter">
+Retrieved from "<a href="./CC3000 First Time Configuration_files/CC3000 First Time Configuration.htm">http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://processors.wiki.ti.com/index.php/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wi-Fi" title="Category:Wi-Fi">Wi-Fi</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:CC3000" title="Category:CC3000">CC3000</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wireless_Connectivity" title="Category:Wireless Connectivity">Wireless Connectivity</a></span></div></div>				<!-- /catlinks -->
+			<!-- AC : 030309 : adding ArticleComments support -->
+      <!-- AC : 031809 : Adding patch from http://wiki.sanb.design.ti.com/twiki/bin/view/SDSApps/AddingArticleCommentsToEachPage -->
+      <a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_First_Time_Configuration">Leave a Comment</a>			
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_First_Time_Configuration" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><a href="./CC3000 First Time Configuration_files/CC3000 First Time Configuration.htm" title="View the content page [alt-c]" accesskey="c"><span>Page</span></a></li>
+					<li id="ca-talk" class="new"><a href="http://processors.wiki.ti.com/index.php?title=Talk:CC3000_First_Time_Configuration&action=edit&redlink=1" title="Discussion about the content page [alt-t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h5><span>Variants</span><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="./CC3000 First Time Configuration_files/CC3000 First Time Configuration.htm"><span>Read</span></a></li>
+					<li id="ca-viewsource"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_First_Time_Configuration&action=edit" title="This page is protected.
+You can view its source [alt-e]" accesskey="e"><span>View source</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="http://processors.wiki.ti.com/index.php?title=CC3000_First_Time_Configuration&action=history" title="Past revisions of this page [alt-h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="http://processors.wiki.ti.com/index.php/CC3000_First_Time_Configuration#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://processors.wiki.ti.com/index.php" id="searchform">
+		<input type="hidden" name="title" value="Special:Search">
+				<input id="searchInput" name="search" type="text" title="Search Texas Instruments Embedded Processors Wiki [alt-f]" accesskey="f" value="">
+		<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists">
+		<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text">
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/images/tiexpres.png);" href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage"><a href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main Page</a></li>
+					<li id="n-All-pages"><a href="http://processors.wiki.ti.com/index.php/Special:AllPages">All pages</a></li>
+					<li id="n-All-categories"><a href="http://processors.wiki.ti.com/index.php/Special:Categories">All categories</a></li>
+					<li id="n-Popular-pages"><a href="http://processors.wiki.ti.com/index.php/Special:PopularPages">Popular pages</a></li>
+					<li id="n-Popular-authors"><a href="http://processors.wiki.ti.com/index.php/Special:MostPopularAuthors">Popular authors</a></li>
+					<li id="n-Popular-categories"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryHits">Popular categories</a></li>
+					<li id="n-Category-stats"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryStats">Category stats</a></li>
+					<li id="n-recentchanges"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="http://processors.wiki.ti.com/index.php/Special:Random" title="Load a random page [alt-x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="http://processors.wiki.ti.com/index.php/Help:Contents" title="The place to find out">Help</a></li>
+					<li id="n-Google-Search"><a href="http://processors.wiki.ti.com/index.php/GoogleSearch">Google Search</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- coll-print_export -->
+<div class="portal" id="p-coll-print_export">
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=book_creator&referer=CC3000+First+Time+Configuration" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=render_article&arttitle=CC3000+First+Time+Configuration&oldid=135773&writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_First_Time_Configuration&printable=yes" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://processors.wiki.ti.com/index.php/Special:WhatLinksHere/CC3000_First_Time_Configuration" title="List of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChangesLinked/CC3000_First_Time_Configuration" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="http://processors.wiki.ti.com/index.php/Special:SpecialPages" title="List of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_First_Time_Configuration&oldid=135773" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-smwbrowselink"><a href="http://processors.wiki.ti.com/index.php/Special:Browse/CC3000_First_Time_Configuration" title="Special:Browse/CC3000 First Time Configuration">Browse properties</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 15 March 2013, at 16:02.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 16,318 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights" title="Texas Instruments Embedded Processors Wiki:Copyrights">Creative Commons Attribution-Share Alike 3.0 license</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Privacy_policy" title="Texas Instruments Embedded Processors Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:About" title="Texas Instruments Embedded Processors Wiki:About">About Texas Instruments Embedded Processors Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:General_disclaimer" title="Texas Instruments Embedded Processors Wiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="./CC3000 First Time Configuration_files/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki"></a></li>
+												<li id="footer-icon-copyright"><a href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img src="./CC3000 First Time Configuration_files/88x31.png" alt="Creative Commons Attribution-Share Alike 3.0 license" width="88" height="31"></a></li>
+							</ul>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3008403-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		<!-- Served in 1.385 secs. -->			
+
+</body></html>

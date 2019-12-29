@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide -->
+<html lang="en" dir="ltr"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CC3000 Host Driver Porting Guide - Texas Instruments Embedded Processors Wiki</title>
+
+<meta name="generator" content="MediaWiki 1.16.0">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/extensions/BreadCrumbs/BreadCrumbs.css">
+<link rel="shortcut icon" href="http://processors.wiki.ti.com/images/ti32.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://processors.wiki.ti.com/opensearch_desc.php" title="Texas Instruments Embedded Processors Wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Driver_Porting_Guide&action=creativecommons" rel="meta">
+<link rel="copyright" href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="Texas Instruments Embedded Processors Wiki Atom feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="alternate" type="application/rss+xml" title="Texas Instruments Embedded Processors Wiki RSS feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&feed=rss">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/vector/main-ltr.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/shared.css?270" media="screen">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/skins/common/commonPrint.css?270" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Common.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Print.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000" media="print">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=MediaWiki:Vector.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=18000&action=raw&maxage=18000">
+<link rel="stylesheet" href="http://processors.wiki.ti.com/index.php?title=-&action=raw&maxage=18000&gen=css">
+<script type="text/javascript" async="" src="./CC3000 Host Driver Porting Guide_files/ga.js"></script><script>
+var skin="vector",
+stylepath="/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://processors.wiki.ti.com",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="CC3000_Host_Driver_Porting_Guide",
+wgTitle="CC3000 Host Driver Porting Guide",
+wgAction="view",
+wgArticleId=13062,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=150853,
+wgVersion="1.16.0",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Texas Instruments Embedded Processors Wiki", "5": "Texas Instruments Embedded Processors Wiki talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "20": "Staging", "21": "Staging talk", "22": "C6000 EABI", "23": "C6000 EABI talk", "102": "Property", "103": "Property talk", "104": "Type", "105": "Type talk", "106": "Form", "107": "Form talk", "108": "Concept", "109": "Concept talk", "170": "Filter", "171": "Filter talk", "274": "Widget", "275": "Widget talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "texas_instruments_embedded_processors_wiki": 4, "texas_instruments_embedded_processors_wiki_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "staging": 20, "staging_talk": 21, "c6000_eabi": 22, "c6000_eabi_talk": 23, "property": 102, "property_talk": 103, "type": 104, "type_talk": 105, "form": 106, "form_talk": 107, "concept": 108, "concept_talk": 109, "filter": 170, "filter_talk": 171, "widget": 274, "widget_talk": 275, "image": 6, "image_talk": 7},
+wgSiteName="Texas Instruments Embedded Processors Wiki",
+wgCategories=["Wi-Fi", "CC3000", "Wireless Connectivity"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgRestrictionRead=[],
+wgFCKEditorDir="extensions/FCKeditor/fckeditor/",
+wgFCKEditorExtDir="extensions/FCKeditor",
+wgFCKEditorToolbarSet="Wiki",
+wgFCKEditorHeight="0",
+sfgAutocompleteOnAllChars=false,
+sfgScriptPath="/extensions/SemanticForms",
+sfgAutocompleteValues=[],
+sfgShowOnSelect=[],
+sfgFieldProperties=[],
+sfgDependentFields=[],
+sfgFormErrorsHeader="There were errors with your form input; see below.",
+sfgBlankErrorStr="cannot be blank",
+sfgBadURLErrorStr="must have the correct URL format, starting with \"http\"",
+sfgBadEmailErrorStr="must have a valid email address format",
+sfgBadNumberErrorStr="must be a valid number",
+sfgBadDateErrorStr="must be a valid date",
+sfgAnonEditWarning="Warning: You are not logged in. Your IP address will be recorded in this page\'s edit history.",
+sfgSaveAndContinueSummary="Saved using \"Save and continue\" button in form";
+</script><script src="./CC3000 Host Driver Porting Guide_files/wikibits.js"></script>
+<script src="./CC3000 Host Driver Porting Guide_files/jquery.min.js"></script>
+<script>var ltDebugMessages = false;</script>
+<script>
+var wgLTEMessages = {"livetranslate-button-translate":"Translate","livetranslate-button-translating":"Translating...","livetranslate-dictionary-error":"Could not obtain the live translate dictionary. No words will be treated as special during the translation process."};
+</script>
+<script>var ltMsAppId = "ECE119B5F43AE1DC3FCA6A86CB13B19F8BFF7E33";</script>
+<script src="./CC3000 Host Driver Porting Guide_files/ajax.js"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.htc")}</style><![endif]-->
+<script src="./CC3000 Host Driver Porting Guide_files/index.php"></script><link rel="stylesheet" type="text/css" href="./CC3000 Host Driver Porting Guide_files/index(1).php">
+
+<script src="./CC3000 Host Driver Porting Guide_files/ext.livetranslate.js"></script><script src="./CC3000 Host Driver Porting Guide_files/ext.lt.ms.js"></script>		<link rel="alternate" type="application/rdf+xml" title="CC3000 Host Driver Porting Guide" href="http://processors.wiki.ti.com/index.php?title=Special:ExportRDF/CC3000_Host_Driver_Porting_Guide&xmlmime=rdf">
+<script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; window.addEventListener('waxSetArr', function(evt) {_arrInputs=evt.detail;}); return { getElement: function (i) { return _arrInputs[i]; } } }(); function waxGetElement(i) { return WAX.getElement(i); }</script></head>
+<body class="mediawiki ltr ns-0 ns-subject page-CC3000_Host_Driver_Porting_Guide skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">CC3000 Host Driver Porting Guide</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<h3 id="siteSub">From Texas Instruments Embedded Processors Wiki</h3>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#mw-head">navigation</a>,
+					<a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="livetranslatediv" style="display:inline; float:right" class="notranslate" sourcelang="en">Translate this page to&nbsp;<select id="livetranslatelang"><option value="cs">cs - Česky</option>
+<option value="de">de - Deutsch</option>
+<option value="es">es - Español</option>
+<option value="fi">fi - Suomi</option>
+<option value="fr">fr - Français</option>
+<option value="hu">hu - Magyar</option>
+<option value="it">it - Italiano</option>
+<option value="ja">ja - 日本語</option>
+<option value="ko">ko - 한국어</option>
+<option value="pl">pl - Polski</option>
+<option value="pt">pt - Português</option>
+<option value="ru">ru - Русский</option>
+<option value="sv">sv - Svenska</option>
+<option value="vi">vi - Tiếng Việt</option>
+<option value="zh-cn">zh-CN - ‪中文(中国大陆)‬</option></select>&nbsp;<button id="livetranslatebutton">Translate</button>&nbsp;<button id="ltrevertbutton" style="display:none">Show original</button></div><div id="BreadCrumbsTrail"><a href="./CC3000 Host Driver Porting Guide_files/CC3000 Host Driver Porting Guide.htm" title="CC3000 Host Driver Porting Guide">CC3000 Host Driver Porting Guide</a></div><div class="hf-nsheader"><p><script language="Javascript">
+var tiContentGroup;
+tiContentGroup = "/DSP/wiki/Ext";
+var tiPageName;
+tiPageName = 'CC3000_Host_Driver_Porting_Guide';
+</script>
+</p>
+<div style="float: right; padding: 0px 5px 5px 0px">
+<table style="border-collapse: separate; border-spacing: 0; border-width: 2px; border-style: hidden; border-color: gray; background-color: rgb(255, 255, 250);">
+<tbody><tr>
+<td> <!-- Google CSE Search Box Begins  -->
+<p></p><form action="http://processors.wiki.ti.com/index.php" id="searchbox_012993352299989377144:kjaa1vfng0a"><input type="hidden" name="title" value="GoogleSearch"><input type="hidden" name="cx" value="012993352299989377144:kjaa1vfng0a"><input type="hidden" name="cof" value="FORID:11"><input type="text" name="q" size="25" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;"><input type="submit" name="sa" value="Search"><input name="siteurl" type="hidden" value="processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide"><input name="ref" type="hidden" value="processors.wiki.ti.com/index.php/CC3000"><input name="ss" type="hidden" value=""></form><script type="text/javascript" src="./CC3000 Host Driver Porting Guide_files/brand"></script>
+<!-- Google CSE Search Box Ends --><!-- Google Search Result Snippet Begins -->
+<p></p>
+<div id="results_012993352299989377144:kjaa1vfng0a"></div><script type="text/javascript">var googleSearchIframeName = "results_012993352299989377144:kjaa1vfng0a";var googleSearchFormName = "searchbox_012993352299989377144:kjaa1vfng0a";var googleSearchFrameWidth = 600;var googleSearchFrameborder = 0;var googleSearchDomain = "www.google.com";var googleSearchPath = "/cse";</script><script type="text/javascript" src="./CC3000 Host Driver Porting Guide_files/show_afs_search.js"></script>
+<p><!-- Google Search Result Snippet Ends -->
+</p>
+</td></tr></tbody></table>
+</div>
+</div><div class="hf-header"></div><p><a href="http://processors.wiki.ti.com/index.php/CC3000" title="CC3000"> Return to CC3000 Main page</a>
+<br>
+<br> This wiki provides porting guidelines for the CC3000 host driver. It addresses the software entity that is provided by TI for an external microcontroller that acts as a host processor. It will show an implementation of the CC3000 host driver and enable an interaction with the CC3000 solution. <br> <br>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a id="togglelink" class="internal" href="javascript:toggleToc()">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Assumptions"><span class="tocnumber">1</span> <span class="toctext">Assumptions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SPI_Driver_Porting_Guide"><span class="tocnumber">2</span> <span class="toctext">SPI Driver Porting Guide</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Overview"><span class="tocnumber">2.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Porting_Highlights"><span class="tocnumber">2.2</span> <span class="toctext">Porting Highlights</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SpiOpen"><span class="tocnumber">2.2.1</span> <span class="toctext">SpiOpen</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SpiWrite"><span class="tocnumber">2.2.2</span> <span class="toctext">SpiWrite</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SpiRead"><span class="tocnumber">2.2.3</span> <span class="toctext">SpiRead</span></a>
+<ul>
+<li class="toclevel-4 tocsection-8"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Handling_Collision"><span class="tocnumber">2.2.3.1</span> <span class="toctext">Handling Collision</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-9"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SpiClose"><span class="tocnumber">2.2.4</span> <span class="toctext">SpiClose</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#SpiResumeSpi"><span class="tocnumber">2.2.5</span> <span class="toctext">SpiResumeSpi</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#CC3000_Memory_constraints"><span class="tocnumber">2.3</span> <span class="toctext">CC3000 Memory constraints</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Site_Map"><span class="tocnumber">3</span> <span class="toctext">Site Map</span></a></li>
+</ul>
+</td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<h2> <span class="mw-headline" id="Assumptions"> Assumptions  </span></h2>
+<p>This document assumes that the user is familiar with: 
+</p>
+<ol><li><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide" title="CC3000 Host Programming Guide"> CC3000 Host Programming guide</a>
+</li><li><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#CC3000_SPI_Operation" title="CC3000 Host Programming Guide">Standard serial peripheral interface (SPI) operation</a>
+</li><li><a href="http://processors.wiki.ti.com/index.php/CC3000_Wi-Fi_Downloads#Platform_Independent_Downloads" title="CC3000 Wi-Fi Downloads"> CC3000 APIs Doxygen Documentation</a><br>
+</li></ol>
+<dl><dd><ul><li> Download the CC3000 Doxygen API documentation
+</li></ul>
+</dd></dl>
+<h2> <span class="mw-headline" id="SPI_Driver_Porting_Guide"> SPI Driver Porting Guide  </span></h2>
+<h3> <span class="mw-headline" id="Overview"> Overview  </span></h3>
+<p>Porting the SPI driver requires these steps: 
+</p>
+<ol><li>Interfacing the SPI hardware. This includes interfacing the hardware-dependent registers of the MCU, implementation of the interrupt function for IRQ line handling, etc. This functionality requires deciding whether or not to use direct memory access (DMA) for SPI transmission or reception. These are MCU-dependent features that rely greatly on the desired application behavior. 
+</li><li>Implementation of SPI application programming interface (API) functions, such as SpiWrite, SpiClose, and other functions as described in this document that are used by the upper layers. This functionality is exposed to the CC3000 host driver and enables it to send or receive data, commands, and events over the SPI.
+</li></ol>
+<table cellspacing="1" cellpadding="1" border="1" style="height: 30px">
+
+<tbody><tr>
+<td> <b>This page focuses mainly on SPI application programming interface (API) functions (step 2 above)</b>
+</td></tr></tbody></table>
+<table cellspacing="1" cellpadding="1" border="1" style="height: 32px">
+
+<tbody><tr>
+<td> <b>To understand the SPI hardware specific implementation and state machine, please refer to the CC3000 Host Programming Guide page.</b>
+</td></tr></tbody></table>
+<h3> <span class="mw-headline" id="Porting_Highlights"> Porting Highlights  </span></h3>
+<p>The following functions must be supplied by the SPI driver to the upper layers: 
+</p>
+<ul><li><b>SpiOpen</b> – Initializes SPI hardware and registers the SPI RX handler that is called on each packet received from the CC3000 device. 
+</li><li><b>SpiWrite</b> – Receives a pointer to data and the length of data and transmits a data packet to the SPI according to the SPI protocol, differentiating between the first write transaction and subsequent write operations. 
+</li><li><b>SpiRead</b> – Performs a read operation as a result of IRQ line activation (active low) during the IDLE state of SPI. 
+</li><li><b>SpiClose</b> - Releases all resources used by the SPI and deinitializes the hardware. 
+</li><li><b>SpiResumeSpi</b> – Resumes SPI communication under the assumption that it was previously paused within the SPI driver itself. 
+</li><li><b>sReadWlanInterruptPin</b> – The callback provided during wlan_init call and invoked to read a value of the SPI IRQ pin of the CC3000 device 
+</li><li><b>sWlanInterruptEnable</b> – The callback provided during the wlan_init call and invoked to enable an interrupt on the IRQ line of SPI 
+</li><li><b>sWlanInterruptDisable</b> - The callback provided during the wlan_init call and invoked to disable an interrupt on the IRQ line of SPI 
+</li><li><b>sWriteWlanPin</b> - The callback provided during the wlan_init call and invoked to write a value to the CC3000_EN pin of the CC3000 device, that is, entry or exit from reset of the CC3000 device
+</li></ul>
+<p>As follows from the description of the SPI protocol, the SPI driver implements a kind of state-machine to appropriately handle events on the IRQ line during read or write operation. Depending on the MCU, the decision must be made as to whether the SPI uses a DMA or central processing unit (CPU) for data handling. This decision triggers changes in the SPI source code and influences the SPI state-machine, which implements the CC3000 SPI protocol. To review an example implementation, see the existing SPI driver implementation for the LM3S9B96 source code for the DMA-based SPI operation or MSP430FRAM5739 for polling-based CC3000 SPI implementation. The following sections discuss guidelines for implementing the API function. 
+</p>
+<h4> <span class="mw-headline" id="SpiOpen"> SpiOpen  </span></h4>
+<p>The SpiOpen function is called from the wlan_start API function. The main purpose of the function is to register the callback for the RX path, allocate buffers for the SPI Transmission and Reception of data, and initialize the SPI internal state-machine. The SpiOpen function has the following prototype and functionality on MSP430 platform: 
+</p>
+<pre>void SpiOpen(gcSpiHandleRx pfRxHandler)
+{
+	sSpiInformation.ulSpiState = eSPI_STATE_POWERUP;
+
+	sSpiInformation.SPIRxHandler = pfRxHandler;
+	sSpiInformation.usTxPacketLength = 0;
+	sSpiInformation.pTxPacket = NULL;
+	sSpiInformation.pRxPacket = (unsigned char *)spi_buffer;
+	sSpiInformation.usRxPacketLength = 0;
+
+	
+
+	//
+	// Enable interrupt on the GPIOA pin of WLAN IRQ
+	//
+	tSLInformation.WlanInterruptEnable();
+}</pre> 
+<p>Please note that Initialization of SPI hardware is done within the Application code, although it can be done also in the SPIOpen function. 
+</p>
+<h4> <span class="mw-headline" id="SpiWrite"> SpiWrite  </span></h4>
+<p>The SPIWrite function transmits a given user buffer over the SPI according to the protocol described in the <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide#Protocol_Description" class="external text" rel="nofollow" target="_blank"><i>Protocol Description</i></a> section of the <a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Programming_Guide" class="external text" rel="nofollow" target="_blank">CC3000 Host Programming Guide</a>. The implementation of the function is MCU-dependent and considers implementation questions, such as whether to use the DMA and whether to wait for the IRQ from the CC3000 device using busy waits or interrupt triggered. The following example code flow is taken from the CC3000 host driver source code for a DMA-based implementation of Stellaris: 
+</p>
+<pre>long SpiWrite(unsigned char *pUserBuffer, unsigned short usLength)
+{
+    unsigned char ucPad = 0;
+
+	//
+	// Figure out the total length of the packet in order to figure out if there is padding or not
+	//
+    if(!(usLength &amp; 0x0001))
+    {
+        ucPad++;
+    }
+
+
+    pUserBuffer[0] = WRITE;
+    pUserBuffer[1] = HI(usLength + ucPad);
+    pUserBuffer[2] = LO(usLength + ucPad);
+    pUserBuffer[3] = 0;
+    pUserBuffer[4] = 0;
+
+    usLength += (sizeof(btspi_hdr) + ucPad);
+
+	if (sSpiInformation.ulSpiState == eSPI_STATE_POWERUP)
+	{
+		while (sSpiInformation.ulSpiState&nbsp;!= eSPI_STATE_INITIALIZED)
+			;
+	}
+	
+	if (sSpiInformation.ulSpiState == eSPI_STATE_INITIALIZED)
+	{
+		//
+		// This is time for first TX/RX transactions over SPI: the IRQ is down - so need to send read buffer size command
+		//
+		SpiFirstWrite(pUserBuffer, usLength);
+	}
+	else 
+	{
+		//
+		// We need to prevent here race that can occur in case 2 back to back packets are sent to the 
+		// device, so the state will move to IDLE and once again to not IDLE due to IRQ
+		//
+		tSLInformation.WlanInterruptDisable();
+
+		while (sSpiInformation.ulSpiState&nbsp;!= eSPI_STATE_IDLE)
+		{
+			;
+		}
+
+		
+		sSpiInformation.ulSpiState = eSPI_STATE_WRITE_IRQ;
+		sSpiInformation.pTxPacket = pUserBuffer;
+		sSpiInformation.usTxPacketLength = usLength;
+		
+		//
+		// Assert the CS line and wait till SSI IRQ line is active and then initialize write operation
+		//
+		ASSERT_CS();
+
+		//
+		// Re-enable IRQ - if it was not disabled - this is not a problem...
+		//
+		tSLInformation.WlanInterruptEnable();
+	}
+
+
+	//
+	// Due to the fact that we are currently implementing a blocking situation
+	// here we will wait till end of transaction
+	//
+
+	while (eSPI_STATE_IDLE&nbsp;!= sSpiInformation.ulSpiState)
+		;
+	
+    return(0);
+}</pre> 
+<table cellspacing="1" cellpadding="1" border="1" style="height: 64px">
+
+<tbody><tr>
+<td> <b>Actual transmission does not occur in the function itself, but rather in the IRQ handler, which is triggered by IRQ line assertion from the CC3000 device. Also observe the blocking behavior of the function: the function is blocked until the SPI is not in IDLE state. This blocking behavior is expected from any other implementation.</b>
+</td></tr></tbody></table>
+<h4> <span class="mw-headline" id="SpiRead"> SpiRead  </span></h4>
+<p>The SpiRead function is called as a result of activity on the IRQ line while the SPI is in IDLE state. Two different situations are possible: the SPI is idle and detects activity by receiving an interrupt on the IRQ line, or the SPI is idle but the host MCU is preparing to transmit a packet to the device. In either case, implementation follows the protocol defined for the CC3000 SPI (see the section<a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#Handling_Collision" class="external text" rel="nofollow" target="_blank"><i>Handling Collision</i></a>). The following example code focuses on the first situation, in which the idle SPI receives an interrupt on the IRQ line: 
+</p>
+<pre>Void SPI_IRQ(void)
+{
+	switch(__even_in_range(P2IV,P2IV_P2IFG3))
+    {
+	  case P2IV_P2IFG3:
+		if (sSpiInformation.ulSpiState == eSPI_STATE_POWERUP)
+		{
+			/* This means IRQ line was low call a callback of HCI Layer to inform on event */
+	 		sSpiInformation.ulSpiState = eSPI_STATE_INITIALIZED;
+		}
+		else if (sSpiInformation.ulSpiState == eSPI_STATE_IDLE)
+		{
+			sSpiInformation.ulSpiState = eSPI_STATE_READ_IRQ;
+			
+			/* IRQ line goes down - we are start reception */
+			ASSERT_CS();
+
+			//
+			// Wait for TX/RX Compete which will come as DMA interrupt
+			// 
+	                SpiReadHeader();
+
+			sSpiInformation.ulSpiState = eSPI_STATE_READ_EOT;
+			
+			//
+			//
+			//
+			SSIContReadOperation();
+		}
+		else if (sSpiInformation.ulSpiState == eSPI_STATE_WRITE_IRQ)
+		{
+			SpiWriteDataSynchronous(sSpiInformation.pTxPacket, sSpiInformation.usTxPacketLength);
+
+			sSpiInformation.ulSpiState = eSPI_STATE_IDLE;
+
+			DEASSERT_CS();
+		}
+		break;
+	default:
+		break;
+	}
+}</pre> 
+<h5> <span class="mw-headline" id="Handling_Collision"> Handling Collision  </span></h5>
+<p>Collision can occur when the MCU starts to transmit data while, at the same time, the IRQ line is being asserted and the CC3000 device wants to transmit data. The MCU must decide which operation to perform first: read or write. If a write operation is performed first, following the CSn assertion step, there is no need to wait for IRQ assertion because it is already asserted. In addition, after the write transaction, the CC3000 device performs the new request by asserting the IRQ line. The MCU is not required to remember that the request is already issued. 
+</p>
+<h4> <span class="mw-headline" id="SpiClose"> SpiClose  </span></h4>
+<p>The SPIClose function is called when the MCU decides to perform a shutdown operation on the CC3000 device. The functionality of SPIClose is up to the MCU. A general guideline is that it can shut down the SPI power domain and release the resources used by the SPI driver. 
+</p>
+<pre>Void SpiClose(void)
+{
+	if (sSpiInformation.pRxPacket)
+	{
+		sSpiInformation.pRxPacket = 0;
+	}
+
+	//
+	//	Disable Interrupt in GPIOA module...
+	//
+    tSLInformation.WlanInterruptDisable();
+}</pre> 
+<h4> <span class="mw-headline" id="SpiResumeSpi"> SpiResumeSpi  </span></h4>
+<p>The SpiResumeSpi function is called after the received packet is processed by the CC3000 host driver code in the context of the receive handler. 
+</p>
+<pre>void  SpiResumeSpi(void)
+{
+	P2IE |= BIT3;
+}</pre>
+<h3> <span class="mw-headline" id="CC3000_Memory_constraints"> CC3000 Memory constraints  </span></h3>
+<p>It is assumed that the RX and TX buffers are allocated by the SPI. An RX / TX buffers are defined within the boundaries of CC3000_MINIMAL_RX_SIZE and CC3000_MAXIMAL_RX_SIZE as defined by the CC3000 Host Driver. Note that the sizes of RX and TX buffers can be changed according to the requirements of application. <br> 
+</p>
+<h2> <span class="mw-headline" id="Site_Map"> Site Map  </span></h2>
+<dl><dd><ul><li><a href="http://processors.wiki.ti.com/index.php/CC3000" title="CC3000">CC3000 Main Page</a>
+</li></ul>
+</dd></dl>
+<p><br>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 92/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="hf-footer"></div><div class="hf-nsfooter"><table style="text-align:center; background:white; width:100%; text-align:left; height: 65px border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; border-width: 1px; border-style: solid;">
+<tbody><tr>
+<td width="305px"><a href="http://processors.wiki.ti.com/index.php/File:E2e.jpg" class="image"><img alt="E2e.jpg" src="./CC3000 Host Driver Porting Guide_files/E2e.jpg" width="305" height="63"></a>
+</td><td><i>For technical support please post your questions at <a href="http://e2e.ti.com/" class="external free" rel="nofollow" target="_blank">http://e2e.ti.com</a>. Please post only comments about the article <b>CC3000 Host Driver Porting Guide</b> here.</i>
+</td></tr></tbody></table>
+<table style="border-style:solid; border-width:1px; text-align:center; width:100%;">
+
+<tbody><tr style="font-size:150%;">
+<td rowspan="2"> <a href="http://processors.wiki.ti.com/index.php/File:Hyperlink_blue.png" class="image"><img alt="Hyperlink blue.png" src="./CC3000 Host Driver Porting Guide_files/96px-Hyperlink_blue.png" width="96" height="96"></a>
+</td><td><b>Links</b>
+</td></tr>
+<tr>
+<td>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/microcontroller/arm_stellaris/overview.page" class="external text" rel="nofollow" target="_blank">ARM Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/arm.page" class="external text" rel="nofollow" target="_blank">ARM Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/davinci/device.page" class="external text" rel="nofollow" target="_blank">Digital Media Processor</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/home.page" class="external text" rel="nofollow" target="_blank">Digital Signal Processing</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/home.page" class="external text" rel="nofollow" target="_blank">Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c6000-multicore/device.page" class="external text" rel="nofollow" target="_blank">Multi Core Processor</a>
+</td></tr></tbody></table>
+<table border="0" align="center" style="color:green; border-spacing: 15pt 4pt;">
+
+<tbody><tr>
+<td> <a href="http://www.ti.com/lsds/ti/dsp/platform/c5000/device.page" class="external text" rel="nofollow" target="_blank">Ultra Low Power DSP</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/8-bit_value_line.page" class="external text" rel="nofollow" target="_blank">8 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/16-bit_msp430/overview.page" class="external text" rel="nofollow" target="_blank">16 bit Microcontroller MCU</a>
+</td><td> <a href="http://www.ti.com/lsds/ti/microcontroller/32-bit_c2000/overview.page" class="external text" rel="nofollow" target="_blank">32 bit Microcontroller MCU</a>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p><!-- HitBox Sub accounts Code START -->
+<script language="JavaScript" src="./CC3000 Host Driver Porting Guide_files/metrics-min.js" type="text/javascript"></script>
+<!-- HitBox Sub accounts Code END -->
+</p></div><div class="printfooter">
+Retrieved from "<a href="./CC3000 Host Driver Porting Guide_files/CC3000 Host Driver Porting Guide.htm">http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://processors.wiki.ti.com/index.php/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wi-Fi" title="Category:Wi-Fi">Wi-Fi</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:CC3000" title="Category:CC3000">CC3000</a></span> | <span dir="ltr"><a href="http://processors.wiki.ti.com/index.php/Category:Wireless_Connectivity" title="Category:Wireless Connectivity">Wireless Connectivity</a></span></div></div>				<!-- /catlinks -->
+			<!-- AC : 030309 : adding ArticleComments support -->
+      <!-- AC : 031809 : Adding patch from http://wiki.sanb.design.ti.com/twiki/bin/view/SDSApps/AddingArticleCommentsToEachPage -->
+      <a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_Host_Driver_Porting_Guide">Leave a Comment</a>			
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&returnto=CC3000_Host_Driver_Porting_Guide" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><a href="./CC3000 Host Driver Porting Guide_files/CC3000 Host Driver Porting Guide.htm" title="View the content page [alt-c]" accesskey="c"><span>Page</span></a></li>
+					<li id="ca-talk" class="new"><a href="http://processors.wiki.ti.com/index.php?title=Talk:CC3000_Host_Driver_Porting_Guide&action=edit&redlink=1" title="Discussion about the content page [alt-t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h5><span>Variants</span><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="./CC3000 Host Driver Porting Guide_files/CC3000 Host Driver Porting Guide.htm"><span>Read</span></a></li>
+					<li id="ca-viewsource"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Driver_Porting_Guide&action=edit" title="This page is protected.
+You can view its source [alt-e]" accesskey="e"><span>View source</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Driver_Porting_Guide&action=history" title="Past revisions of this page [alt-h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="http://processors.wiki.ti.com/index.php/CC3000_Host_Driver_Porting_Guide#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://processors.wiki.ti.com/index.php" id="searchform">
+		<input type="hidden" name="title" value="Special:Search">
+				<input id="searchInput" name="search" type="text" title="Search Texas Instruments Embedded Processors Wiki [alt-f]" accesskey="f" value="">
+		<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists">
+		<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text">
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/images/tiexpres.png);" href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage"><a href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main Page</a></li>
+					<li id="n-All-pages"><a href="http://processors.wiki.ti.com/index.php/Special:AllPages">All pages</a></li>
+					<li id="n-All-categories"><a href="http://processors.wiki.ti.com/index.php/Special:Categories">All categories</a></li>
+					<li id="n-Popular-pages"><a href="http://processors.wiki.ti.com/index.php/Special:PopularPages">Popular pages</a></li>
+					<li id="n-Popular-authors"><a href="http://processors.wiki.ti.com/index.php/Special:MostPopularAuthors">Popular authors</a></li>
+					<li id="n-Popular-categories"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryHits">Popular categories</a></li>
+					<li id="n-Category-stats"><a href="http://processors.wiki.ti.com/index.php/Special:CategoryStats">Category stats</a></li>
+					<li id="n-recentchanges"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="http://processors.wiki.ti.com/index.php/Special:Random" title="Load a random page [alt-x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="http://processors.wiki.ti.com/index.php/Help:Contents" title="The place to find out">Help</a></li>
+					<li id="n-Google-Search"><a href="http://processors.wiki.ti.com/index.php/GoogleSearch">Google Search</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- coll-print_export -->
+<div class="portal" id="p-coll-print_export">
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=book_creator&referer=CC3000+Host+Driver+Porting+Guide" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&bookcmd=render_article&arttitle=CC3000+Host+Driver+Porting+Guide&oldid=150853&writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Driver_Porting_Guide&printable=yes" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://processors.wiki.ti.com/index.php/Special:WhatLinksHere/CC3000_Host_Driver_Porting_Guide" title="List of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChangesLinked/CC3000_Host_Driver_Porting_Guide" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="http://processors.wiki.ti.com/index.php/Special:SpecialPages" title="List of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://processors.wiki.ti.com/index.php?title=CC3000_Host_Driver_Porting_Guide&oldid=150853" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-smwbrowselink"><a href="http://processors.wiki.ti.com/index.php/Special:Browse/CC3000_Host_Driver_Porting_Guide" title="Special:Browse/CC3000 Host Driver Porting Guide">Browse properties</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 17 May 2013, at 15:43.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 14,643 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Copyrights" title="Texas Instruments Embedded Processors Wiki:Copyrights">Creative Commons Attribution-Share Alike 3.0 license</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:Privacy_policy" title="Texas Instruments Embedded Processors Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:About" title="Texas Instruments Embedded Processors Wiki:About">About Texas Instruments Embedded Processors Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://processors.wiki.ti.com/index.php/Texas_Instruments_Embedded_Processors_Wiki:General_disclaimer" title="Texas Instruments Embedded Processors Wiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="./CC3000 Host Driver Porting Guide_files/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki"></a></li>
+												<li id="footer-icon-copyright"><a href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img src="./CC3000 Host Driver Porting Guide_files/88x31.png" alt="Creative Commons Attribution-Share Alike 3.0 license" width="88" height="31"></a></li>
+							</ul>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3008403-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		<!-- Served in 0.690 secs. -->			
+
+</body></html>
